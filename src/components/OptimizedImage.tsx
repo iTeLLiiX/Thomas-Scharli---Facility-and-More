@@ -12,10 +12,9 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
   alt,
   className = '',
-  fallbackSrc = 'https://images.pexels.com/photos/4246266/pexels-photo-4246266.jpeg?auto=compress&cs=tinysrgb&w=800',
+  fallbackSrc,
   loading = 'lazy'
 }) => {
-  const [imageSrc, setImageSrc] = useState(src);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
@@ -24,9 +23,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   };
 
   const handleImageError = () => {
-    if (!hasError) {
+    if (!hasError && fallbackSrc) {
       setHasError(true);
-      setImageSrc(fallbackSrc);
     }
   };
 
@@ -38,7 +36,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         </div>
       )}
       <img
-        src={imageSrc}
+        src={hasError && fallbackSrc ? fallbackSrc : src}
         alt={alt}
         loading={loading}
         onLoad={handleImageLoad}

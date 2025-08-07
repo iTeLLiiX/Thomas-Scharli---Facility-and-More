@@ -1,43 +1,48 @@
 // Image imports with fallbacks
 // This file handles image imports and provides fallback URLs when local images are not available
 
+// Import images directly for Vite
+import heroTruck from '../assets/images/hero-truck.jpg';
+import aboutThomas from '../assets/images/about-thomas.jpg';
+import portfolio1 from '../assets/images/portfolio-1.jpg';
+import portfolio2 from '../assets/images/portfolio-2.jpg';
+import portfolio3 from '../assets/images/portfolio-3.jpg';
+import portfolio4 from '../assets/images/portfolio-4.jpg';
+import warehouse from '../assets/images/warehouse.jpg';
+import logo from '../assets/images/logo.png';
+
 export const images = {
   // Hero section
   hero: {
-    truck: '/src/assets/images/hero-truck.jpg',
-    fallback: '/src/assets/images/hero-truck.jpg'
+    truck: heroTruck,
+    fallback: heroTruck
   },
   
   // About section
   about: {
-    thomas: '/src/assets/images/about-thomas.jpg',
-    fallback: '/src/assets/images/about-thomas.jpg'
+    thomas: aboutThomas,
+    fallback: aboutThomas
   },
   
   // Portfolio section
   portfolio: {
-    project1: '/src/assets/images/portfolio-1.jpg',
-    project2: '/src/assets/images/portfolio-2.jpg',
-    project3: '/src/assets/images/portfolio-3.jpg',
-    project4: '/src/assets/images/portfolio-4.jpg',
-    fallbacks: [
-      '/src/assets/images/portfolio-1.jpg',
-      '/src/assets/images/portfolio-2.jpg',
-      '/src/assets/images/portfolio-3.jpg',
-      '/src/assets/images/portfolio-4.jpg'
-    ]
+    project1: portfolio1,
+    project2: portfolio2,
+    project3: portfolio3,
+    project4: portfolio4,
+    fallbacks: [portfolio1, portfolio2, portfolio3, portfolio4]
   },
   
   // Services section
   services: {
-    warehouse: '/src/assets/images/warehouse.jpg',
-    fallback: '/src/assets/images/warehouse.jpg'
+    warehouse: warehouse,
+    fallback: warehouse
   },
   
   // Logo
   logo: {
-    main: '/src/assets/images/logo.png',
-    fallback: '/src/assets/images/logo.png'
+    main: logo,
+    fallback: logo
   }
 };
 
