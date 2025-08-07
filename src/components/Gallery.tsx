@@ -5,77 +5,77 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('Alle');
 
-  const galleryImages = [
+  const portfolioProjects = [
     {
       id: 1,
-      src: '/images/gallery/gallery-1.jpg',
-      alt: 'Professioneller Transport-Service',
-      category: 'Transport',
-      description: 'Sichere und professionelle Transporte mit modernster Ausrüstung'
+      src: '/images/portfolio/project-1.jpg',
+      alt: 'E-Commerce Website',
+      category: 'E-Commerce',
+      description: 'Moderne E-Commerce Plattform mit React und TypeScript'
     },
     {
       id: 2,
-      src: '/images/gallery/gallery-2.jpg',
-      alt: 'Umzugsdienstleistungen',
-      category: 'Umzug',
-      description: 'Komplette Umzugsdienstleistungen für Privat- und Geschäftskunden'
+      src: '/images/portfolio/project-2.jpg',
+      alt: 'Corporate Website',
+      category: 'Corporate',
+      description: 'Professionelle Unternehmenswebsite mit modernem Design'
     },
     {
       id: 3,
-      src: '/images/gallery/gallery-3.jpg',
-      alt: 'Lagerung und Logistik',
-      category: 'Lagerung',
-      description: 'Moderne Lagerhallen mit Klimakontrolle und Sicherheitssystemen'
+      src: '/images/portfolio/project-3.jpg',
+      alt: 'Mobile App',
+      category: 'Mobile',
+      description: 'Responsive Mobile App mit PWA-Funktionen'
     },
     {
       id: 4,
-      src: '/images/gallery/gallery-4.jpg',
-      alt: 'Express Transport',
-      category: 'Express',
-      description: 'Schnelle Kurier- und Expresstransporte für dringende Sendungen'
+      src: '/images/portfolio/project-4.jpg',
+      alt: 'Landing Page',
+      category: 'Landing',
+      description: 'Conversion-optimierte Landing Page'
     },
     {
       id: 5,
-      src: '/images/gallery/gallery-5.jpg',
-      alt: 'Entrümpelung und Entsorgung',
-      category: 'Entrümpelung',
-      description: 'Professionelle Haushaltsauflösungen und fachgerechte Entsorgung'
+      src: '/images/portfolio/project-5.jpg',
+      alt: 'Blog Platform',
+      category: 'Blog',
+      description: 'Moderne Blog-Plattform mit CMS'
     },
     {
       id: 6,
-      src: '/images/gallery/gallery-6.jpg',
-      alt: 'Fernumzüge',
-      category: 'Fernumzug',
-      description: 'Deutschlandweite und europäische Umzüge mit Full-Service'
+      src: '/images/portfolio/project-6.jpg',
+      alt: 'Dashboard',
+      category: 'Dashboard',
+      description: 'Analytics Dashboard mit React'
     },
     {
       id: 7,
-      src: '/images/gallery/gallery-7.jpg',
-      alt: 'Büroumzüge',
-      category: 'Büroumzug',
-      description: 'Spezialisierte Büroumzüge mit minimaler Ausfallzeit'
+      src: '/images/portfolio/project-7.jpg',
+      alt: 'Portfolio Website',
+      category: 'Portfolio',
+      description: 'Kreative Portfolio-Website'
     },
     {
       id: 8,
-      src: '/images/gallery/gallery-8.jpg',
-      alt: 'IT-Equipment Transport',
-      category: 'IT-Transport',
-      description: 'Sichere IT-Transporte und Büroausstattung'
+      src: '/images/portfolio/project-8.jpg',
+      alt: 'Restaurant Website',
+      category: 'Restaurant',
+      description: 'Responsive Restaurant-Website'
     },
     {
       id: 9,
-      src: '/images/gallery/gallery-9.jpg',
-      alt: 'Team und Ausrüstung',
-      category: 'Team',
-      description: 'Unser erfahrenes Team mit modernster Transport-Ausrüstung'
+      src: '/images/portfolio/project-9.jpg',
+      alt: 'SaaS Platform',
+      category: 'SaaS',
+      description: 'SaaS-Plattform mit moderner UI'
     }
   ];
 
-  const categories = ['Alle', 'Transport', 'Umzug', 'Lagerung', 'Express', 'Entrümpelung', 'Fernumzug', 'Büroumzug', 'IT-Transport', 'Team'];
+  const categories = ['Alle', 'E-Commerce', 'Corporate', 'Mobile', 'Landing', 'Blog', 'Dashboard', 'Portfolio', 'Restaurant', 'SaaS'];
 
-  const filteredImages = selectedCategory === 'Alle' 
-    ? galleryImages 
-    : galleryImages.filter(image => image.category === selectedCategory);
+  const filteredProjects = selectedCategory === 'Alle' 
+    ? portfolioProjects 
+    : portfolioProjects.filter(project => project.category === selectedCategory);
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
@@ -87,13 +87,13 @@ const Gallery = () => {
 
   const nextImage = () => {
     if (selectedImage !== null) {
-      setSelectedImage((selectedImage + 1) % filteredImages.length);
+      setSelectedImage((selectedImage + 1) % filteredProjects.length);
     }
   };
 
   const prevImage = () => {
     if (selectedImage !== null) {
-      setSelectedImage(selectedImage === 0 ? filteredImages.length - 1 : selectedImage - 1);
+      setSelectedImage(selectedImage === 0 ? filteredProjects.length - 1 : selectedImage - 1);
     }
   };
 
@@ -108,144 +108,129 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="portfolio" className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Unsere Galerie
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Unser Portfolio
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Eindrücke unserer Arbeit und unseres Engagements für exzellenten Service.
+            Entdecken Sie unsere erfolgreichen Webentwicklungs-Projekte. 
+            Jedes Projekt ist einzigartig und auf die Bedürfnisse unserer Kunden zugeschnitten.
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((cat) => (
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((category) => (
             <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                selectedCategory === cat
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-6 py-3 rounded-full font-medium transition-colors ${
+                selectedCategory === category
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
               }`}
             >
-              {cat}
+              {category}
             </button>
           ))}
         </div>
 
-        {/* Image Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredImages.map((image, index) => (
+        {/* Portfolio Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project, index) => (
             <div
-              key={image.id}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer group hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              key={project.id}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
               onClick={() => openLightbox(index)}
             >
-              {/* Image Container */}
-              <div className="aspect-square relative overflow-hidden">
-                {/* Real Image */}
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-xs font-medium">
-                    {image.category}
-                  </span>
-                </div>
-
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Eye className="h-8 w-8 text-white" />
-                  </div>
+              {/* Project Image */}
+              <div className="relative h-64 bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
+                <div className="text-6xl text-white">💻</div>
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                  <Eye className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
-
-              {/* Image Info */}
-              <div className="p-4">
-                <h3 className="font-semibold text-gray-800 mb-1">{image.alt}</h3>
-                <p className="text-sm text-gray-600">{image.description}</p>
+              
+              {/* Project Info */}
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                    {project.category}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {project.alt}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {project.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Lightbox */}
-      {selectedImage !== null && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
-          onClick={closeLightbox}
-          onKeyDown={handleKeyDown}
-          tabIndex={0}
-        >
-          <button
-            onClick={closeLightbox}
-            className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors"
-            aria-label="Galerie schließen"
-          >
-            <X className="h-8 w-8" />
-          </button>
-
-          <button
-            onClick={(e) => { e.stopPropagation(); prevImage(); }}
-            className="absolute left-6 text-white hover:text-gray-300 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50"
-            aria-label="Vorheriges Bild"
-          >
-            <ChevronLeft className="h-8 w-8" />
-          </button>
-
-          <button
-            onClick={(e) => { e.stopPropagation(); nextImage(); }}
-            className="absolute right-6 text-white hover:text-gray-300 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50"
-            aria-label="Nächstes Bild"
-          >
-            <ChevronRight className="h-8 w-8" />
-          </button>
-
+        {/* Lightbox */}
+        {selectedImage !== null && (
           <div
-            className="relative bg-white rounded-lg shadow-xl max-w-4xl w-full overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
+            onClick={closeLightbox}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
           >
-            {/* Image Display */}
-            <div className="w-full h-96 relative">
-              <img
-                src={filteredImages[selectedImage]?.src}
-                alt={filteredImages[selectedImage]?.alt}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <div className="relative max-w-4xl max-h-full">
+              {/* Close Button */}
+              <button
+                onClick={closeLightbox}
+                className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
+              >
+                <X className="w-8 h-8" />
+              </button>
 
-            {/* Image Details */}
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                {filteredImages[selectedImage]?.alt}
-              </h3>
-              <p className="text-gray-600 mb-4">
-                {filteredImages[selectedImage]?.description}
-              </p>
-              <div className="flex justify-between items-center text-sm text-gray-500">
-                <span>Kategorie: {filteredImages[selectedImage]?.category}</span>
-                <a
-                  href={filteredImages[selectedImage]?.src}
-                  download
-                  className="flex items-center space-x-2 text-blue-600 hover:text-blue-700"
-                >
-                  <Download className="h-4 w-4" />
-                  <span>Bild herunterladen</span>
-                </a>
+              {/* Navigation Buttons */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prevImage();
+                }}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10"
+              >
+                <ChevronLeft className="w-8 h-8" />
+              </button>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextImage();
+                }}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10"
+              >
+                <ChevronRight className="w-8 h-8" />
+              </button>
+
+              {/* Image */}
+              <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 text-center">
+                <div className="text-8xl mb-4">💻</div>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  {filteredProjects[selectedImage].alt}
+                </h3>
+                <p className="text-blue-100">
+                  {filteredProjects[selectedImage].description}
+                </p>
+              </div>
+
+              {/* Project Info */}
+              <div className="mt-4 text-center text-white">
+                <p className="text-lg">
+                  {filteredProjects[selectedImage].description}
+                </p>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 };
