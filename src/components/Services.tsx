@@ -1,5 +1,7 @@
 import React from 'react';
 import { Truck, Warehouse, Package, AlertTriangle } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
+import { images } from '../utils/imageImports';
 
 const Services: React.FC = () => {
   const services = [
@@ -71,6 +73,25 @@ const Services: React.FC = () => {
               </button>
             </div>
           ))}
+        </div>
+
+        {/* Warehouse Image */}
+        <div className="mb-16">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <OptimizedImage
+              src={images.services.warehouse}
+              fallbackSrc={images.services.fallback}
+              alt="Modernes Lagerhaus von Thomas Schärli"
+              className="w-full h-64 md:h-96 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Unser Lagerhaus</h3>
+              <p className="text-gray-600">
+                Moderne, sichere und klimakontrollierte Lagerung für Ihre wertvollen Güter. 
+                24/7 Überwachung und flexible Lagergrößen nach Ihren Bedürfnissen.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Exclusions */}

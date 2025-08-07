@@ -1,5 +1,7 @@
 import React from 'react';
 import { Truck, Phone, Mail, Menu, X } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
+import { images } from '../utils/imageImports';
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -13,8 +15,13 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="bg-blue-600 text-white p-2 rounded-lg">
-              <span className="text-2xl font-bold">TS</span>
+            <div className="w-12 h-12">
+              <OptimizedImage
+                src={images.logo.main}
+                fallbackSrc={images.logo.fallback}
+                alt="Thomas Schärli Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <div className="text-xl font-bold text-gray-900">THOMAS SCHARLI</div>

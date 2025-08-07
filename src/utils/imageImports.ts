@@ -5,13 +5,13 @@ export const images = {
   // Hero section
   hero: {
     truck: '/src/assets/images/hero-truck.jpg',
-    fallback: 'https://images.pexels.com/photos/906494/pexels-photo-906494.jpeg?auto=compress&cs=tinysrgb&w=800'
+    fallback: '/src/assets/images/hero-truck.jpg'
   },
   
   // About section
   about: {
     thomas: '/src/assets/images/about-thomas.jpg',
-    fallback: 'https://images.pexels.com/photos/4246266/pexels-photo-4246266.jpeg?auto=compress&cs=tinysrgb&w=800'
+    fallback: '/src/assets/images/about-thomas.jpg'
   },
   
   // Portfolio section
@@ -21,23 +21,23 @@ export const images = {
     project3: '/src/assets/images/portfolio-3.jpg',
     project4: '/src/assets/images/portfolio-4.jpg',
     fallbacks: [
-      'https://images.pexels.com/photos/7464230/pexels-photo-7464230.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/7464722/pexels-photo-7464722.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/4481537/pexels-photo-4481537.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/3964704/pexels-photo-3964704.jpeg?auto=compress&cs=tinysrgb&w=800'
+      '/src/assets/images/portfolio-1.jpg',
+      '/src/assets/images/portfolio-2.jpg',
+      '/src/assets/images/portfolio-3.jpg',
+      '/src/assets/images/portfolio-4.jpg'
     ]
   },
   
   // Services section
   services: {
     warehouse: '/src/assets/images/warehouse.jpg',
-    fallback: 'https://images.pexels.com/photos/4481537/pexels-photo-4481537.jpeg?auto=compress&cs=tinysrgb&w=800'
+    fallback: '/src/assets/images/warehouse.jpg'
   },
   
   // Logo
   logo: {
     main: '/src/assets/images/logo.png',
-    fallback: null // No fallback for logo, will use text instead
+    fallback: '/src/assets/images/logo.png'
   }
 };
 
