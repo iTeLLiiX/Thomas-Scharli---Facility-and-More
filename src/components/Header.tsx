@@ -24,11 +24,11 @@ const Header: React.FC = () => {
           <div className="flex-shrink-0">
             <a href="#" className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">TS</span>
+                <span className="text-white font-bold text-lg">WS</span>
               </div>
               <div className="text-lg lg:text-xl font-bold text-gray-900">
-                THOMAS SCHARLI
-                <div className="text-xs text-gray-600 font-normal">Facility and More</div>
+                WEBSITE SCHARLI
+                <div className="text-xs text-gray-600 font-normal">Webentwicklung & Design</div>
               </div>
             </a>
           </div>
@@ -39,10 +39,10 @@ const Header: React.FC = () => {
               Über Uns
             </a>
             <a href="#services" className="link-underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
-              Leistungen
+              Services
             </a>
-            <a href="#gallery" className="link-underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
-              Referenzen
+            <a href="#portfolio" className="link-underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Portfolio
             </a>
             <a href="#contact" className="link-underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
               Kontakt
@@ -54,14 +54,12 @@ const Header: React.FC = () => {
             {/* Phone Number */}
             <div className="flex items-center space-x-2 text-gray-700">
               <Phone className="h-4 w-4" />
-              <span className="font-medium">Tel: 0152 2135 1626</span>
+              <span className="font-medium">Tel: +49 123 456 789</span>
             </div>
-            
-
             
             {/* CTA Button */}
             <button className="btn-animated-big bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">
-              Kostenlos Anfragen
+              Projekt starten
             </button>
           </div>
 
@@ -98,14 +96,14 @@ const Header: React.FC = () => {
                 className="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Leistungen
+                Services
               </a>
               <a
-                href="#gallery"
+                href="#portfolio"
                 className="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Referenzen
+                Portfolio
               </a>
               <a
                 href="#contact"
@@ -118,14 +116,12 @@ const Header: React.FC = () => {
               {/* Mobile Phone Number */}
               <div className="px-3 py-2 flex items-center space-x-2 text-gray-700">
                 <Phone className="h-4 w-4" />
-                <span className="font-medium">Tel: 0152 2135 1626</span>
+                <span className="font-medium">Tel: +49 123 456 789</span>
               </div>
-              
-
               
               <div className="px-3 py-2">
                 <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">
-                  Kostenlos Anfragen
+                  Projekt starten
                 </button>
               </div>
             </div>

@@ -1,157 +1,131 @@
-# 🚀 Thomas Scharli - Facility and More Website
+# Webseite Scharli - Professionelle Webentwicklung
 
-Eine moderne, responsive Website für Thomas Scharli mit vollständigem Admin-Panel und Button-Verwaltung.
+Eine moderne, responsive Website für professionelle Webentwicklungs- und Design-Services.
 
-## 🌟 Features
+## 🚀 Features
 
-### 🎯 Hauptfunktionen
-- **Responsive Design** - Optimiert für alle Geräte
-- **Moderne UI/UX** - Mit Tailwind CSS und Lucide Icons
-- **Smooth Scrolling** - Mit Lenis Scroll-Animation
-- **Admin-Panel** - Vollständige Website-Verwaltung
-- **Button-Verwaltung** - Alle Buttons bearbeitbar
-- **Projektverwaltung** - CRUD-Operationen für Projekte
-- **Bildverwaltung** - Upload und Organisation von Bildern
-
-### 🔐 Admin-Bereich
-- **Login-Daten:** 
-  - Benutzername: `thomas`
-  - Passwort: `hodenkobold`
-- **Verfügbare Tabs:**
-  - 📊 Dashboard - Übersicht und Statistiken
-  - 📁 Projekte - Projektverwaltung
-  - 🖱️ Button-Verwaltung - Alle Buttons bearbeiten
-  - 🖼️ Bildverwaltung - Bilder hochladen und verwalten
-  - ✏️ Website-Inhalt - Texte und Kontaktdaten
-  - 👥 Benutzer - Benutzerverwaltung (zukünftig)
-  - ⚙️ Einstellungen - Website-Konfiguration
-
-### 🎛️ Button-Verwaltung
-Alle Buttons der Website können im Admin-Bereich bearbeitet werden:
-
-- **📞 Jetzt anrufen** - Telefonnummer wählen
-- **💬 Kostenloses Angebot anfordern** - Zum Kontaktformular scrollen
-- **🚀 Projekt starten** - Zum Kontaktformular scrollen
-- **📅 Termin vereinbaren** - Calendly-Link öffnen
-- **👁️ Arbeiten ansehen** - Zur Work-Sektion scrollen
-- **✉️ E-Mail senden** - E-Mail-Client öffnen
+- **Moderne Technologien**: React, TypeScript, Tailwind CSS
+- **Responsive Design**: Optimiert für alle Geräte
+- **Performance**: Optimiert für schnelle Ladezeiten
+- **SEO-Optimiert**: Meta-Tags und strukturierte Daten
+- **Smooth Scrolling**: Lenis für flüssige Animationen
+- **GSAP Animationen**: Professionelle Scroll-Animationen
 
 ## 🛠️ Technologie-Stack
 
-- **Frontend:** React 18 + TypeScript
-- **Styling:** Tailwind CSS
-- **Icons:** Lucide React
-- **Animation:** GSAP + Lenis
-- **Build Tool:** Vite
-- **Deployment:** GitHub Pages + GitHub Actions
+- **Frontend**: React 18 mit TypeScript
+- **Styling**: Tailwind CSS
+- **Build Tool**: Vite
+- **Animationen**: GSAP + ScrollTrigger
+- **Smooth Scrolling**: Lenis
+- **Icons**: Lucide React
 
-## 🚀 Installation & Entwicklung
+## 📦 Installation
 
-### Voraussetzungen
-- Node.js 18+
-- npm oder yarn
+1. **Repository klonen**:
+   ```bash
+   git clone [repository-url]
+   cd project
+   ```
 
-### Installation
-```bash
-# Repository klonen
-git clone https://github.com/iTeLLiiX/Thomas-Scharli---Facility-and-More.git
-cd Thomas-Scharli---Facility-and-More/project
+2. **Abhängigkeiten installieren**:
+   ```bash
+   npm install
+   ```
 
-# Dependencies installieren
-npm install
+3. **Entwicklungsserver starten**:
+   ```bash
+   npm run dev
+   ```
 
-# Entwicklungsserver starten
-npm run dev
+4. **Produktions-Build erstellen**:
+   ```bash
+   npm run build
+   ```
 
-# Produktions-Build erstellen
-npm run build
+## 🎨 Komponenten
 
-# Build testen
-npm run preview
-```
+Die Website besteht aus folgenden Hauptkomponenten:
 
-## 📁 Projektstruktur
-
-```
-project/
-├── src/
-│   ├── components/
-│   │   ├── AdminPanel.tsx          # Haupt-Admin-Panel
-│   │   ├── ButtonActions.tsx       # Button-Verwaltung
-│   │   ├── ProjectEditor.tsx       # Projekt-Editor
-│   │   ├── Contact.tsx             # Kontaktsektion
-│   │   ├── Hero.tsx                # Hero-Bereich
-│   │   ├── CTASection.tsx          # Call-to-Action
-│   │   └── ...                     # Weitere Komponenten
-│   ├── App.tsx                     # Haupt-App-Komponente
-│   └── main.tsx                    # App-Einstiegspunkt
-├── .github/workflows/
-│   └── static.yml                  # GitHub Actions Deployment
-└── dist/                           # Build-Ausgabe
-```
+- **Header**: Navigation und Logo
+- **Hero**: Hauptbereich mit Call-to-Action
+- **PainsSection**: Problembereiche der Kunden
+- **WorkSection**: Portfolio und Arbeiten
+- **QuoteSection**: Kunden-Zitate
+- **Services**: Angebotene Services
+- **Gallery**: Bildergalerie
+- **PricingSection**: Preise und Pakete
+- **Testimonials**: Kundenbewertungen
+- **FAQ**: Häufig gestellte Fragen
+- **CTASection**: Call-to-Action Bereich
+- **Contact**: Kontaktformular
+- **Footer**: Footer mit Links und Informationen
+- **ChatWidget**: Live-Chat Widget
+- **CookieConsent**: Cookie-Zustimmung
 
 ## 🌐 Deployment
 
-Die Website wird automatisch über GitHub Actions deployed:
+Die Website kann auf verschiedenen Plattformen deployed werden:
 
-1. **Automatisches Deployment** bei jedem Push auf `main`
-2. **GitHub Pages** Hosting
-3. **Live-URL:** https://itellix.github.io/Thomas-Scharli---Facility-and-More/
+### Vercel (Empfohlen)
+```bash
+npm install -g vercel
+vercel
+```
 
-### Deployment-Prozess
-1. Code wird auf `main` Branch gepusht
-2. GitHub Actions Workflow startet automatisch
-3. Dependencies werden installiert
-4. Website wird gebaut (`npm run build`)
-5. Build wird auf GitHub Pages deployed
+### Netlify
+```bash
+npm run build
+# dist/ Ordner auf Netlify hochladen
+```
+
+### GitHub Pages
+```bash
+npm run build
+# dist/ Ordner auf GitHub Pages deployen
+```
+
+## 📱 Responsive Design
+
+Die Website ist vollständig responsive und optimiert für:
+- Desktop (1200px+)
+- Tablet (768px - 1199px)
+- Mobile (320px - 767px)
+
+## 🎯 SEO & Performance
+
+- **Meta-Tags**: Vollständige SEO-Meta-Tags
+- **Open Graph**: Social Media Optimierung
+- **Strukturierte Daten**: Schema.org Markup
+- **Performance**: Optimierte Assets und Code-Splitting
+- **Accessibility**: WCAG 2.1 konform
 
 ## 🔧 Konfiguration
 
-### Admin-Panel Zugang
-- **URL:** Klicken Sie auf den "Admin" Button im Header
-- **Benutzername:** thomas
-- **Passwort:** hodenkobold
+### Vite Config
+Die Vite-Konfiguration ist optimiert für:
+- Code-Splitting
+- Asset-Optimierung
+- Development Server
+- Production Build
 
-### Button-Verwaltung
-1. Im Admin-Panel auf "Button-Verwaltung" klicken
-2. Buttons können bearbeitet, getestet und aktiviert/deaktiviert werden
-3. Änderungen werden sofort übernommen
-
-### Projektverwaltung
-1. Im Admin-Panel auf "Projekte" klicken
-2. Neue Projekte hinzufügen oder bestehende bearbeiten
-3. Detaillierte Projektinformationen (Kunde, Budget, Standort, etc.)
+### Tailwind Config
+Tailwind CSS ist konfiguriert mit:
+- Custom Farben
+- Responsive Breakpoints
+- Custom Komponenten
 
 ## 📞 Kontakt
 
-- **Website:** https://itellix.github.io/Thomas-Scharli---Facility-and-More/
-- **GitHub:** https://github.com/iTeLLiiX/Thomas-Scharli---Facility-and-More
-- **E-Mail:** hello@webseite-scharli.de
-- **Telefon:** +49 170 123 456 78
-
-## 📝 Changelog
-
-### Version 1.0.0 (Aktuell)
-- ✅ Vollständiges Admin-Panel implementiert
-- ✅ Button-Verwaltung hinzugefügt
-- ✅ Projektverwaltung mit CRUD-Operationen
-- ✅ Responsive Design für alle Geräte
-- ✅ GitHub Pages Deployment
-- ✅ Automatisches CI/CD mit GitHub Actions
-
-## 🤝 Beitragen
-
-1. Repository forken
-2. Feature Branch erstellen (`git checkout -b feature/AmazingFeature`)
-3. Änderungen committen (`git commit -m 'Add some AmazingFeature'`)
-4. Branch pushen (`git push origin feature/AmazingFeature`)
-5. Pull Request erstellen
+- **Email**: hello@webseite-scharli.de
+- **Telefon**: +49 170 123 456 78
+- **Standort**: Deutschland
 
 ## 📄 Lizenz
 
-Dieses Projekt ist für Thomas Scharli entwickelt. Alle Rechte vorbehalten.
+© 2024 Scharli. Alle Rechte vorbehalten.
 
 ---
 
-**Entwickelt mit ❤️ für Thomas Scharli - Facility and More**
+**Entwickelt mit ❤️ für professionelle Webentwicklung**
 
