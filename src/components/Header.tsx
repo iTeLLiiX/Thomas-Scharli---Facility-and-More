@@ -55,11 +55,11 @@ const Header: React.FC<HeaderProps> = ({ onAdminLogin }) => {
             {/* Admin Login Button */}
             <button
               onClick={onAdminLogin}
-              className="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-gray-800 font-medium transition-colors border border-gray-300 rounded-md hover:bg-gray-50"
+              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white font-medium transition-colors border border-blue-600 rounded-md hover:bg-blue-700 shadow-md"
               title="Admin-Login"
             >
               <Shield className="h-4 w-4" />
-              <span>Admin</span>
+              <span>Admin Panel</span>
             </button>
             
             {/* CTA Button */}
@@ -131,10 +131,10 @@ const Header: React.FC<HeaderProps> = ({ onAdminLogin }) => {
                   onAdminLogin?.();
                   setIsMobileMenuOpen(false);
                 }}
-                className="w-full flex items-center justify-center space-x-2 px-3 py-2 text-gray-700 hover:text-gray-900 font-medium"
+                className="w-full flex items-center justify-center space-x-2 px-3 py-2 bg-blue-600 text-white font-medium rounded-md"
               >
                 <Shield className="h-4 w-4" />
-                <span>Admin-Login</span>
+                <span>Admin Panel</span>
               </button>
               
               <div className="px-3 py-2">
