@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
 
-interface HeaderProps {
-  onAdminLogin?: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ onAdminLogin }) => {
+const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -61,15 +57,7 @@ const Header: React.FC<HeaderProps> = ({ onAdminLogin }) => {
               <span className="font-medium">Tel: 0152 2135 1626</span>
             </div>
             
-            {/* Admin Login Button */}
-            <button
-              onClick={onAdminLogin}
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white font-medium transition-colors border border-blue-600 rounded-md hover:bg-blue-700 shadow-md"
-              title="Admin-Login"
-            >
-              <Shield className="h-4 w-4" />
-              <span>Admin</span>
-            </button>
+
             
             {/* CTA Button */}
             <button className="btn-animated-big bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">
@@ -133,17 +121,7 @@ const Header: React.FC<HeaderProps> = ({ onAdminLogin }) => {
                 <span className="font-medium">Tel: 0152 2135 1626</span>
               </div>
               
-              {/* Mobile Admin Login Button */}
-              <button
-                onClick={() => {
-                  onAdminLogin?.();
-                  setIsMobileMenuOpen(false);
-                }}
-                className="w-full flex items-center justify-center space-x-2 px-3 py-2 bg-blue-600 text-white font-medium rounded-md"
-              >
-                <Shield className="h-4 w-4" />
-                <span>Admin Panel</span>
-              </button>
+
               
               <div className="px-3 py-2">
                 <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">
