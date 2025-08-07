@@ -1,0 +1,10 @@
+[33ma9b3028[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Index.html für Vercel Deployment korrigiert - Asset-Links entfernt
+[33m6581ba0[m Vercel Konfiguration korrigiert - Runtime-Fehler behoben
+[33m4f5b30b[m Admin Panel Test-Version - Einfache Implementierung ohne Icons für bessere Kompatibilität
+[33m54d3d89[m Admin Panel korrekt in Haupt-App eingebunden - Services-Komponente bereinigt
+[33mb85c7be[m Admin Panel korrigiert - Transport Services aktualisiert und Admin Button sichtbar gemacht
+[33m4bdeac5[m Admin Panel erweitert - Projektbilder hinzufügen und verwalten
+[33m3165900[m Admin Panel hinzugefügt - Vollständiges CMS für Thomas Scharli Transport Website
+[33m2698502[m Website auf Thomas Scharli - Facility and More Transport-Website wiederhergestellt
+[33ma3acf68[m Vercel-Konfiguration hinzugefügt für optimales Deployment
+[33mcba4f64[m Website repariert und für Vercel Deployment vorbereitet
