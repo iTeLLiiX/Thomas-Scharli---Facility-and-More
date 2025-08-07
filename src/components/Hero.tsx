@@ -3,53 +3,80 @@ import { Phone, Send } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          {/* Main Heading */}
-          <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6">
-            <span className="text-blue-600">Transport &</span>
-            <br />
-            Lagerlösungen
-          </h1>
-          
-          {/* Subtitle */}
-          <p className="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-8">
-            Vertrauen Sie auf unsere langjährige Erfahrung im Transport von Möbeln, 
-            Fahrzeugen und verschiedenen Gütern. Sichere Lagerung in unserem modernen 
-            Lagerhaus für ganz Deutschland und angrenzende Länder.
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="btn-animated-big bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center space-x-2 text-lg">
-              <Send className="w-5 h-5" />
-              <span>Kostenloses Angebot</span>
-            </button>
+    <section className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-screen">
+          {/* Left Column - Content */}
+          <div className="text-center lg:text-left">
+            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight mb-6">
+              Transport &
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                Lagerlösungen
+              </span>
+            </h1>
             
-            <button className="btn-animated-big bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-colors flex items-center space-x-2 text-lg">
-              <Phone className="w-5 h-5" />
-              <span>Jetzt Anrufen</span>
-            </button>
+            <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+              Vertrauen Sie auf unsere langjährige Erfahrung im Transport von Möbeln, 
+              Fahrzeugen und verschiedenen Gütern. Sichere Lagerung in unserem modernen 
+              Lagerhaus für ganz Deutschland und angrenzende Länder.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              <button className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors">
+                Kostenloses Angebot
+              </button>
+              <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors">
+                Jetzt Anrufen
+              </button>
+            </div>
+
+            {/* Service Features */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                    <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z" />
+                  </svg>
+                </div>
+                <div className="text-sm font-medium text-gray-700">Transport</div>
+                <div className="text-xs text-gray-500">Möbel & Fahrzeuge</div>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm0 2h12v8H4V6z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+                <div className="text-sm font-medium text-gray-700">Lagerung</div>
+                <div className="text-xs text-gray-500">Sichere Aufbewahrung</div>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+                <div className="text-sm font-medium text-gray-700">Deutschland</div>
+                <div className="text-xs text-gray-500">& Nachbarländer</div>
+              </div>
+            </div>
           </div>
-          
-          {/* Stats */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-            <div className="text-center">
-              <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">500+</div>
-              <div className="text-gray-600">Erfolgreiche Transporte</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">15+</div>
-              <div className="text-gray-600">Jahre Erfahrung</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">98%</div>
-              <div className="text-gray-600">Kundenzufriedenheit</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">24/7</div>
-              <div className="text-gray-600">Service & Beratung</div>
+
+          {/* Right Column - Hero Image/Animation */}
+          <div className="relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-600 to-purple-600 p-8">
+              <div className="text-white text-center">
+                <div className="text-6xl mb-4">🚛</div>
+                <h3 className="text-2xl font-bold mb-2">ETS Transport & Umzug</h3>
+                <p className="text-blue-100 mb-4">Professioneller Transport & Lagerung</p>
+                <div className="bg-white/20 rounded-lg p-4">
+                  <div className="text-3xl font-bold">15+</div>
+                  <div className="text-sm">Jahre Erfahrung</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
