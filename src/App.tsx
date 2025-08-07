@@ -23,10 +23,10 @@ function App() {
     // Initialize Lenis smooth scrolling
     const initLenis = async () => {
       const Lenis = await import('lenis');
-          const lenis = new Lenis.default({
-      duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
+      const lenis = new Lenis.default({
+        duration: 1.2,
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
 
       function raf(time: number) {
         lenis.raf(time);
