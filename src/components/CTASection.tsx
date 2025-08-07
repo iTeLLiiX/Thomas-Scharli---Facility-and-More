@@ -1,15 +1,6 @@
 import React from 'react';
-import { useButtonActions, ActionButton } from './ButtonActions';
 
 const CTASection: React.FC = () => {
-  const { actions } = useButtonActions();
-
-  // Find specific actions
-  const startProjectAction = actions.find(a => a.id === 'start-project');
-  const scheduleCallAction = actions.find(a => a.id === 'schedule-call');
-  const contactEmailAction = actions.find(a => a.id === 'contact-email');
-  const callNowAction = actions.find(a => a.id === 'call-now');
-
   return (
     <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-600 text-white relative overflow-hidden">
       {/* Background Pattern */}
@@ -19,90 +10,75 @@ const CTASection: React.FC = () => {
         }} />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl lg:text-6xl font-bold mb-6">
-          Ready to Transform Your Business?
-        </h2>
-        
-        <p className="text-xl lg:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-          Let's work together to create a website that not only looks amazing 
-          but drives real results for your business.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          {startProjectAction && (
-            <ActionButton 
-              action={startProjectAction} 
-              variant="secondary"
-              className="bg-white text-blue-600 hover:bg-gray-100"
-            />
-          )}
-          {scheduleCallAction && (
-            <ActionButton 
-              action={scheduleCallAction} 
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
-            />
-          )}
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="text-3xl font-bold mb-2">50+</div>
-            <div className="text-blue-100">Happy Clients</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold mb-2">98%</div>
-            <div className="text-blue-100">Satisfaction Rate</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold mb-2">24/7</div>
-            <div className="text-blue-100">Support Available</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold mb-2">100%</div>
-            <div className="text-blue-100">Project Success</div>
-          </div>
-        </div>
-
-        {/* Contact Info */}
-        <div className="mt-12 pt-8 border-t border-white/20">
-          <p className="text-blue-100 mb-4">
-            Need immediate assistance? Contact us directly:
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="text-center max-w-4xl mx-auto">
+          <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+            Bereit für Ihr nächstes Projekt?
+          </h2>
+          <p className="text-xl lg:text-2xl text-blue-100 mb-12 leading-relaxed">
+            Lassen Sie uns gemeinsam Ihre Vision zum Leben erwecken. 
+            Wir sind hier, um Ihnen dabei zu helfen, Ihre Ziele zu erreichen.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            {contactEmailAction && (
-              <button
-                onClick={contactEmailAction.action}
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <button className="btn-animated-big bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors">
+              Start Your Project
+            </button>
+            <button className="btn-animated-big border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+              Schedule a Call
+            </button>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+            <div className="text-center">
+              <div className="text-3xl lg:text-4xl font-bold mb-2">500+</div>
+              <div className="text-blue-100">Erfolgreiche Projekte</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl lg:text-4xl font-bold mb-2">15+</div>
+              <div className="text-blue-100">Jahre Erfahrung</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl lg:text-4xl font-bold mb-2">98%</div>
+              <div className="text-blue-100">Kundenzufriedenheit</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl lg:text-4xl font-bold mb-2">24/7</div>
+              <div className="text-blue-100">Support verfügbar</div>
+            </div>
+          </div>
+
+          {/* Contact Info */}
+          <div className="mt-12 pt-8 border-t border-white/20">
+            <p className="text-blue-100 mb-4">
+              Need immediate assistance? Contact us directly:
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="mailto:hello@webseite-scharli.de" 
                 className="flex items-center space-x-2 text-blue-100 hover:text-white transition-colors"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <span>{contactEmailAction.value}</span>
-              </button>
-            )}
-            <span className="hidden sm:block text-blue-200">|</span>
-            {callNowAction && (
-              <button
-                onClick={callNowAction.action}
+                <span>hello@webseite-scharli.de</span>
+              </a>
+              <span className="hidden sm:block text-blue-200">|</span>
+              <a 
+                href="tel:+4917012345678" 
                 className="flex items-center space-x-2 text-blue-100 hover:text-white transition-colors"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                <span>{callNowAction.value}</span>
-              </button>
-            )}
+                <span>+49 170 123 456 78</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full opacity-10 blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-purple-300 rounded-full opacity-10 blur-3xl"></div>
     </section>
   );
 };
