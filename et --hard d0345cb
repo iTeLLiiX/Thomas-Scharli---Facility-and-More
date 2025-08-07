@@ -1,0 +1,5 @@
+[33mbbb6b2d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Replace Start now button with functional Kontakt aufnehmen button
+[33md0345cb[m Make Admin Panel button more visible with blue styling
+[33m9c84b38[m Configure for Vercel deployment - update vite config and add vercel.json
+[33m8d94dfb[m Fix admin button styling for better visibility
+[33mb7dc22f[m FIX: GitHub Pages Deployment korrigiert - Vite-Konfiguration für GitHub Pages angepasst - GitHub Actions Workflow verbessert - SPA-Routing für GitHub Pages hinzugefügt - 404.html und index.html für korrektes Routing - Website sollte jetzt live funktionieren

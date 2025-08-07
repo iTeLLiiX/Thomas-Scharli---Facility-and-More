@@ -47,103 +47,107 @@ const Hero: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Column - Content */}
-          <div className="text-center lg:text-left">
-            <h1 className="hero-heading text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-900 leading-tight mb-6">
-              We build
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                websites
-              </span>
-              that work
-            </h1>
-            
-            <p className="hero-description text-xl lg:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Modern, fast, and beautiful websites that convert visitors into customers. 
-              Built with the latest technologies and optimized for success.
-            </p>
-            
-            <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              {startProjectAction && (
-                <ActionButton 
-                  action={startProjectAction} 
-                  variant="primary"
-                  className="text-lg px-8 py-4"
-                />
-              )}
-              {viewWorkAction && (
-                <ActionButton 
-                  action={viewWorkAction} 
-                  variant="outline"
-                  className="text-lg px-8 py-4"
-                />
-              )}
+          {/* Left Column - Hero Image */}
+          <div className="relative order-2 lg:order-1">
+            {/* Main Hero Image */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="/images/hero/hero-main.jpg"
+                alt="THOMAS SCHARLI Transport & Umzug"
+                className="w-full h-96 lg:h-[500px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+
+            {/* Floating Elements */}
+            <div className="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-lg">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-600">15+</div>
+                <div className="text-xs text-gray-600">Jahre Erfahrung</div>
+              </div>
+            </div>
+
+            <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg">
+              <div className="flex items-center space-x-3">
+                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-gray-700">Verfügbar</span>
+              </div>
             </div>
           </div>
 
-          {/* Right Column - Scrolling Images */}
-          <div className="relative">
-            {/* Desktop Image Scroll */}
-            <div className="hidden lg:block header76_image-scroll-wrapper">
-              <div ref={imageScrollRef} className="header76_image-list">
-                {Array.from({ length: 8 }, (_, i) => (
-                  <div key={i} className="header76_image-wrapper">
-                    <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl p-6 w-64 h-48 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                          <span className="text-white font-bold text-xl">{i + 1}</span>
-                        </div>
-                        <p className="text-gray-600 font-medium">Project {i + 1}</p>
-                        <p className="text-sm text-gray-500">Modern Design</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-                {/* Duplicate for seamless loop */}
-                {Array.from({ length: 8 }, (_, i) => (
-                  <div key={`duplicate-${i}`} className="header76_image-wrapper">
-                    <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl p-6 w-64 h-48 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                          <span className="text-white font-bold text-xl">{i + 1}</span>
-                        </div>
-                        <p className="text-gray-600 font-medium">Project {i + 1}</p>
-                        <p className="text-sm text-gray-500">Modern Design</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+          {/* Right Column - Content */}
+          <div className="text-center lg:text-left order-1 lg:order-2">
+            <h1 className="hero-heading text-4xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight mb-6">
+              Über Thomas Scharli
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                - Facility and More
+              </span>
+            </h1>
+            
+            <div className="hero-description text-lg lg:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 space-y-4">
+              <p>
+                Mit über 15 Jahren Erfahrung in der Transport- und Logistikbranche haben wir uns als verlässlicher Partner für Privatkunden und Unternehmen etabliert. Unser Familienunternehmen steht für Qualität, Zuverlässigkeit und persönlichen Service.
+              </p>
+              <p>
+                Wir bieten maßgeschneiderte Lösungen für Ihre individuellen Anforderungen - von kleineren Transporten bis hin zu großen Umzügen und langfristiger Lagerung in unserem modernen Lagerhaus.
+              </p>
+            </div>
+            
+            {/* Feature Icons */}
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Vollversichert</div>
+                  <div className="text-sm text-gray-600">Umfassender Schutz</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Zertifiziert</div>
+                  <div className="text-sm text-gray-600">Geprüfte Qualität</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Persönlich</div>
+                  <div className="text-sm text-gray-600">Individuelle Beratung</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Deutschlandweit</div>
+                  <div className="text-sm text-gray-600">& Nachbarländer</div>
+                </div>
               </div>
             </div>
-
-            {/* Tablet/Mobile Image Scroll */}
-            <div className="lg:hidden header76_image-scroll-wrapper-tablet">
-              <div className="header76_image-list-tablet">
-                {Array.from({ length: 6 }, (_, i) => (
-                  <div key={i} className="header76_image-wrapper-tablet">
-                    <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl p-4 w-48 h-32 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-2 flex items-center justify-center">
-                          <span className="text-white font-bold text-sm">{i + 1}</span>
-                        </div>
-                        <p className="text-gray-600 font-medium text-sm">Project {i + 1}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-                {/* Duplicate for seamless loop */}
-                {Array.from({ length: 6 }, (_, i) => (
-                  <div key={`duplicate-mobile-${i}`} className="header76_image-wrapper-tablet">
-                    <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl p-4 w-48 h-32 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-2 flex items-center justify-center">
-                          <span className="text-white font-bold text-sm">{i + 1}</span>
-                        </div>
-                        <p className="text-gray-600 font-medium text-sm">Project {i + 1}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            
+            <div className="hero-cta">
+              <button className="btn-animated-big bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors">
+                Persönliche Beratung vereinbaren
+              </button>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield } from 'lucide-react';
+import { Shield, Phone } from 'lucide-react';
 
 interface HeaderProps {
   onAdminLogin?: () => void;
@@ -26,32 +26,41 @@ const Header: React.FC<HeaderProps> = ({ onAdminLogin }) => {
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#" className="text-2xl lg:text-3xl font-bold text-gray-900">
-              Scharli
+            <a href="#" className="flex items-center space-x-2">
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">TS</span>
+              </div>
+              <div className="text-lg lg:text-xl font-bold text-gray-900">
+                THOMAS SCHARLI
+                <div className="text-xs text-gray-600 font-normal">Facility and More</div>
+              </div>
             </a>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-8">
+            <a href="#about" className="link-underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Über Uns
+            </a>
             <a href="#services" className="link-underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
-              Services
+              Leistungen
             </a>
-            <a href="#work" className="link-underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
-              Work
+            <a href="#gallery" className="link-underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Referenzen
             </a>
-            <a href="#pricing" className="link-underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
-              Pricing
-            </a>
-            <a href="#testimonials" className="link-underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
-              Testimonials
-            </a>
-            <a href="#faq" className="link-underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
-              FAQ
+            <a href="#contact" className="link-underline text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Kontakt
             </a>
           </nav>
 
           {/* Desktop Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
+            {/* Phone Number */}
+            <div className="flex items-center space-x-2 text-gray-700">
+              <Phone className="h-4 w-4" />
+              <span className="font-medium">Tel: 0152 2135 1626</span>
+            </div>
+            
             {/* Admin Login Button */}
             <button
               onClick={onAdminLogin}
@@ -59,12 +68,12 @@ const Header: React.FC<HeaderProps> = ({ onAdminLogin }) => {
               title="Admin-Login"
             >
               <Shield className="h-4 w-4" />
-              <span>Admin Panel</span>
+              <span>Admin</span>
             </button>
             
             {/* CTA Button */}
-            <button className="btn-animated-big bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors">
-              Start now
+            <button className="btn-animated-big bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">
+              Kostenlos Anfragen
             </button>
           </div>
 
@@ -90,40 +99,39 @@ const Header: React.FC<HeaderProps> = ({ onAdminLogin }) => {
           <div className="lg:hidden bg-white border-t border-gray-200">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <a
+                href="#about"
+                className="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Über Uns
+              </a>
+              <a
                 href="#services"
                 className="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Services
+                Leistungen
               </a>
               <a
-                href="#work"
+                href="#gallery"
                 className="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Work
+                Referenzen
               </a>
               <a
-                href="#pricing"
+                href="#contact"
                 className="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Pricing
+                Kontakt
               </a>
-              <a
-                href="#testimonials"
-                className="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Testimonials
-              </a>
-              <a
-                href="#faq"
-                className="block px-3 py-2 text-gray-700 hover:text-gray-900 font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                FAQ
-              </a>
+              
+              {/* Mobile Phone Number */}
+              <div className="px-3 py-2 flex items-center space-x-2 text-gray-700">
+                <Phone className="h-4 w-4" />
+                <span className="font-medium">Tel: 0152 2135 1626</span>
+              </div>
               
               {/* Mobile Admin Login Button */}
               <button
@@ -138,8 +146,8 @@ const Header: React.FC<HeaderProps> = ({ onAdminLogin }) => {
               </button>
               
               <div className="px-3 py-2">
-                <button className="w-full bg-black text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-800 transition-colors">
-                  Start now
+                <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">
+                  Kostenlos Anfragen
                 </button>
               </div>
             </div>

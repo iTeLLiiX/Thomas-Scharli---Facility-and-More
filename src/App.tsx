@@ -5,6 +5,7 @@ import PainsSection from './components/PainsSection';
 import WorkSection from './components/WorkSection';
 import QuoteSection from './components/QuoteSection';
 import Services from './components/Services';
+import Gallery from './components/Gallery';
 import PricingSection from './components/PricingSection';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
@@ -88,6 +89,7 @@ function App() {
       <WorkSection />
       <QuoteSection />
       <Services />
+      <Gallery />
       <PricingSection />
       <Testimonials />
       <FAQ />

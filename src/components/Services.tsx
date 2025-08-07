@@ -3,52 +3,46 @@ import React from 'react';
 const Services: React.FC = () => {
   const services = [
     {
-      icon: "🎨",
-      title: "Web Design",
-      description: "Beautiful, modern designs that capture your brand's essence and engage your audience.",
-      features: ["Responsive Design", "UI/UX Optimization", "Brand Integration", "Custom Illustrations"]
+      icon: "🚛",
+      title: "Privatumzug",
+      description: "Professionelle Umzugsdienstleistungen für Privatpersonen mit höchster Sorgfalt und Zuverlässigkeit.",
+      features: ["Verpackung", "Transport", "Aufbau", "Entsorgung"],
+      image: "/images/services/private-move.jpg"
+    },
+    {
+      icon: "🏢",
+      title: "Büroumzug",
+      description: "Spezialisierte Büroumzüge mit minimaler Ausfallzeit und professioneller IT-Equipment-Behandlung.",
+      features: ["IT-Transport", "Minimale Ausfallzeit", "Sicherheit", "Aufbau"],
+      image: "/images/services/office-move.jpg"
     },
     {
       icon: "⚡",
-      title: "Web Development",
-      description: "Fast, scalable websites built with the latest technologies and best practices.",
-      features: ["React/Next.js", "TypeScript", "Performance Optimization", "SEO Ready"]
+      title: "Express Transport",
+      description: "Schnelle Kurier- und Expresstransporte für dringende Sendungen und zeitkritische Lieferungen.",
+      features: ["Schnelllieferung", "24/7 Service", "Tracking", "Versicherung"],
+      image: "/images/services/express-transport.jpg"
     },
     {
-      icon: "🛒",
-      title: "E-Commerce",
-      description: "Complete online stores that drive sales and provide excellent customer experiences.",
-      features: ["Payment Integration", "Inventory Management", "Order Processing", "Customer Accounts"]
+      icon: "🌍",
+      title: "Fernumzüge",
+      description: "Deutschlandweite und europäische Umzüge mit Full-Service und professioneller Logistik.",
+      features: ["Deutschlandweit", "Europa", "Full-Service", "Versicherung"],
+      image: "/images/services/long-distance.jpg"
     },
     {
-      icon: "📱",
-      title: "Mobile Apps",
-      description: "Native and cross-platform mobile applications for iOS and Android.",
-      features: ["React Native", "Native Development", "App Store Optimization", "Push Notifications"]
+      icon: "📦",
+      title: "Lagerung",
+      description: "Moderne Lagerhallen mit Klimakontrolle und Sicherheitssystemen für Ihre Waren.",
+      features: ["Klimakontrolle", "Sicherheit", "24/7 Zugang", "Versicherung"],
+      image: "/images/services/storage.jpg"
     },
     {
-      icon: "🔍",
-      title: "SEO & Marketing",
-      description: "Comprehensive digital marketing strategies to grow your online presence.",
-      features: ["Search Engine Optimization", "Content Marketing", "Social Media", "Analytics"]
-    },
-    {
-      icon: "🛠️",
-      title: "Maintenance",
-      description: "Ongoing support and maintenance to keep your website running smoothly.",
-      features: ["Security Updates", "Performance Monitoring", "Content Updates", "Technical Support"]
-    },
-    {
-      icon: "🚀",
-      title: "Performance",
-      description: "Optimize your website for speed and user experience.",
-      features: ["Speed Optimization", "Core Web Vitals", "Caching", "CDN Setup"]
-    },
-    {
-      icon: "🔒",
-      title: "Security",
-      description: "Protect your website and data with enterprise-grade security measures.",
-      features: ["SSL Certificates", "Security Audits", "Backup Systems", "Malware Protection"]
+      icon: "🧹",
+      title: "Entrümpelung",
+      description: "Professionelle Haushaltsauflösungen und fachgerechte Entsorgung aller Materialien.",
+      features: ["Haushaltsauflösung", "Fachgerechte Entsorgung", "Recycling", "Sauberkeit"],
+      image: "/images/services/clearance.jpg"
     }
   ];
 
@@ -58,11 +52,11 @@ const Services: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Our Services
+            Unsere Dienstleistungen
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We offer comprehensive web development and design services to help your business 
-            succeed online. From concept to launch, we handle everything.
+            Wir bieten umfassende Transport- und Lagerlösungen für Privat- und Geschäftskunden. 
+            Von Umzügen bis zur sicheren Lagerung - wir sind Ihr zuverlässiger Partner.
           </p>
         </div>
 
@@ -75,8 +69,17 @@ const Services: React.FC = () => {
                   key={index}
                   className="bg-white border border-gray-200 rounded-2xl p-8 w-80 flex-shrink-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                 >
+                  {/* Service Image */}
+                  <div className="mb-6">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-48 object-cover rounded-xl"
+                    />
+                  </div>
+                  
                   {/* Icon */}
-                  <div className="text-5xl mb-6">{service.icon}</div>
+                  <div className="text-3xl mb-4">{service.icon}</div>
                   
                   {/* Title */}
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -101,8 +104,8 @@ const Services: React.FC = () => {
                   </ul>
                   
                   {/* CTA Button */}
-                  <button className="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
-                    Learn More
+                  <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    Mehr erfahren
                   </button>
                 </div>
               ))}
@@ -113,8 +116,17 @@ const Services: React.FC = () => {
                   key={`duplicate-${index}`}
                   className="bg-white border border-gray-200 rounded-2xl p-8 w-80 flex-shrink-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                 >
+                  {/* Service Image */}
+                  <div className="mb-6">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-48 object-cover rounded-xl"
+                    />
+                  </div>
+                  
                   {/* Icon */}
-                  <div className="text-5xl mb-6">{service.icon}</div>
+                  <div className="text-3xl mb-4">{service.icon}</div>
                   
                   {/* Title */}
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -139,8 +151,8 @@ const Services: React.FC = () => {
                   </ul>
                   
                   {/* CTA Button */}
-                  <button className="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
-                    Learn More
+                  <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    Mehr erfahren
                   </button>
                 </div>
               ))}
@@ -152,18 +164,18 @@ const Services: React.FC = () => {
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 lg:p-12 text-white">
             <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-              Need a Custom Solution?
+              Brauchen Sie eine maßgeschneiderte Lösung?
             </h3>
             <p className="text-lg mb-8 opacity-90">
-              We specialize in creating custom web solutions tailored to your specific needs. 
-              Let's discuss your project and find the perfect approach.
+              Wir spezialisieren uns auf individuelle Transport- und Lagerlösungen. 
+              Lassen Sie uns über Ihr Projekt sprechen und die perfekte Lösung finden.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="btn-animated-big bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors">
-                Get Free Quote
+                Kostenloses Angebot
               </button>
               <button className="btn-animated-big border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                Schedule Call
+                Jetzt anrufen
               </button>
             </div>
           </div>
