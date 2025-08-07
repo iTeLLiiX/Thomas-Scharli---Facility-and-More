@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Settings, Image, Users, BarChart3, Shield, LogOut, Menu, X, FolderOpen, Edit, Plus, Trash2, Save, Globe, Phone, Mail } from 'lucide-react';
+import { Settings, Image, Users, BarChart3, Shield, LogOut, Menu, X, FolderOpen, Edit, Plus, Trash2, Save, Globe, Phone, Mail, MousePointer } from 'lucide-react';
 import ImageManager from './ImageManager';
 import ProjectEditor from './ProjectEditor';
+import { useButtonActions, ButtonAction } from './ButtonActions';
 
 interface AdminPanelProps {
   isOpen: boolean;
@@ -84,9 +85,13 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
     aboutText: 'Professional web development and design services. We create modern, fast, and beautiful websites that drive results for your business.'
   });
 
+  // Button actions management
+  const { actions, updateAction, toggleAction } = useButtonActions();
+
   const tabs = [
     { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
     { id: 'projects', label: 'Projekte', icon: FolderOpen },
+    { id: 'buttons', label: 'Button-Verwaltung', icon: MousePointer },
     { id: 'images', label: 'Bildverwaltung', icon: Image },
     { id: 'content', label: 'Website-Inhalt', icon: Edit },
     { id: 'users', label: 'Benutzer', icon: Users },
@@ -145,6 +150,18 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
 
   const updateWebsiteContent = (updates: Partial<WebsiteContent>) => {
     setWebsiteContent(prev => ({ ...prev, ...updates }));
+  };
+
+  const handleButtonUpdate = (id: string, field: keyof ButtonAction, value: any) => {
+    updateAction(id, { [field]: value });
+  };
+
+  const testButtonAction = (action: ButtonAction) => {
+    if (action.enabled) {
+      action.action();
+    } else {
+      alert('Button ist deaktiviert');
+    }
   };
 
   if (!isOpen) return null;
@@ -302,14 +319,14 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
                         <div className="bg-white rounded-2xl shadow-lg p-6">
                           <div className="flex items-center space-x-3 mb-4">
                             <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                              <Image className="h-5 w-5 text-green-600" />
+                              <MousePointer className="h-5 w-5 text-green-600" />
                             </div>
                             <div>
-                              <p className="text-sm text-gray-600">Bilder gesamt</p>
-                              <p className="text-2xl font-bold text-gray-800">156</p>
+                              <p className="text-sm text-gray-600">Aktive Buttons</p>
+                              <p className="text-2xl font-bold text-gray-800">{actions.filter(a => a.enabled).length}</p>
                             </div>
                           </div>
-                          <div className="text-sm text-blue-600">3 neue heute</div>
+                          <div className="text-sm text-blue-600">von {actions.length} verfügbar</div>
                         </div>
 
                         <div className="bg-white rounded-2xl shadow-lg p-6">
@@ -337,11 +354,11 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
                             <span className="text-sm font-medium">Neues Projekt</span>
                           </button>
                           <button
-                            onClick={() => setActiveTab('images')}
+                            onClick={() => setActiveTab('buttons')}
                             className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-center"
                           >
-                            <Image className="h-8 w-8 text-green-600 mx-auto mb-2" />
-                            <span className="text-sm font-medium">Bilder hochladen</span>
+                            <MousePointer className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                            <span className="text-sm font-medium">Buttons verwalten</span>
                           </button>
                           <button
                             onClick={() => setActiveTab('content')}
@@ -358,6 +375,97 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
                             <span className="text-sm font-medium">Einstellungen</span>
                           </button>
                         </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Button Management */}
+                  {activeTab === 'buttons' && (
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-800 mb-2">Button-Verwaltung</h3>
+                        <p className="text-gray-600">
+                          Verwalten Sie alle Buttons der Website. Aktivieren Sie Buttons, ändern Sie Texte und testen Sie die Funktionalität.
+                        </p>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        {actions.map((action) => (
+                          <div key={action.id} className="bg-white rounded-2xl shadow-lg p-6">
+                            <div className="flex items-center justify-between mb-4">
+                              <div className="flex items-center space-x-3">
+                                <div className={`w-3 h-3 rounded-full ${action.enabled ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                                <h4 className="font-semibold text-gray-800">{action.label}</h4>
+                              </div>
+                              <div className="flex space-x-2">
+                                <button
+                                  onClick={() => testButtonAction(action)}
+                                  className="text-blue-600 hover:text-blue-800 text-sm"
+                                  title="Button testen"
+                                >
+                                  Test
+                                </button>
+                                <button
+                                  onClick={() => toggleAction(action.id)}
+                                  className={`text-sm ${action.enabled ? 'text-red-600 hover:text-red-800' : 'text-green-600 hover:text-green-800'}`}
+                                  title={action.enabled ? 'Button deaktivieren' : 'Button aktivieren'}
+                                >
+                                  {action.enabled ? 'Deaktivieren' : 'Aktivieren'}
+                                </button>
+                              </div>
+                            </div>
+                            
+                            <div className="space-y-3">
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                  Button-Text
+                                </label>
+                                <input
+                                  type="text"
+                                  value={action.label}
+                                  onChange={(e) => handleButtonUpdate(action.id, 'label', e.target.value)}
+                                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                />
+                              </div>
+                              
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                  Wert/Aktion
+                                </label>
+                                <input
+                                  type="text"
+                                  value={action.value}
+                                  onChange={(e) => handleButtonUpdate(action.id, 'value', e.target.value)}
+                                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                />
+                              </div>
+                              
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                  Typ
+                                </label>
+                                <select
+                                  value={action.type}
+                                  onChange={(e) => handleButtonUpdate(action.id, 'type', e.target.value)}
+                                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                >
+                                  <option value="phone">Telefon</option>
+                                  <option value="email">E-Mail</option>
+                                  <option value="link">Link</option>
+                                  <option value="form">Formular</option>
+                                  <option value="scroll">Scroll</option>
+                                </select>
+                              </div>
+                            </div>
+                            
+                            <div className="mt-4 pt-4 border-t border-gray-200">
+                              <div className="flex items-center justify-between text-sm text-gray-600">
+                                <span>Status: {action.enabled ? 'Aktiv' : 'Inaktiv'}</span>
+                                <span>Typ: {action.type}</span>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   )}

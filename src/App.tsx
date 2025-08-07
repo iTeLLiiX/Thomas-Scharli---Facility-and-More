@@ -9,6 +9,7 @@ import PricingSection from './components/PricingSection';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import CTASection from './components/CTASection';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
 import CookieConsent from './components/CookieConsent';
@@ -91,6 +92,7 @@ function App() {
       <Testimonials />
       <FAQ />
       <CTASection />
+      <Contact />
       <Footer />
       <ChatWidget />
       <CookieConsent />

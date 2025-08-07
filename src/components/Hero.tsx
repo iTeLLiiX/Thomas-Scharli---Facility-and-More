@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import { useButtonActions, ActionButton } from './ButtonActions';
 
 const Hero: React.FC = () => {
   const imageScrollRef = useRef<HTMLDivElement>(null);
+  const { actions, executeAction } = useButtonActions();
 
   useEffect(() => {
     // Initialize GSAP animations when component mounts
@@ -30,6 +32,10 @@ const Hero: React.FC = () => {
     initAnimations();
   }, []);
 
+  // Find specific actions
+  const startProjectAction = actions.find(a => a.id === 'start-project');
+  const viewWorkAction = actions.find(a => a.id === 'view-work');
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       {/* Background Pattern */}
@@ -57,12 +63,20 @@ const Hero: React.FC = () => {
             </p>
             
             <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="btn-animated-big bg-black text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-800 transition-colors">
-                Start your project
-              </button>
-              <button className="btn-animated-big border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:border-gray-400 hover:bg-gray-50 transition-colors">
-                View our work
-              </button>
+              {startProjectAction && (
+                <ActionButton 
+                  action={startProjectAction} 
+                  variant="primary"
+                  className="text-lg px-8 py-4"
+                />
+              )}
+              {viewWorkAction && (
+                <ActionButton 
+                  action={viewWorkAction} 
+                  variant="outline"
+                  className="text-lg px-8 py-4"
+                />
+              )}
             </div>
           </div>
 
