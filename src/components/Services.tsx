@@ -1,168 +1,170 @@
 import React from 'react';
-import { Home, Building, Truck, Package, Clock, Shield, ArrowRight, Phone } from 'lucide-react';
 
-const Services = () => {
-  const servicesData = [
+const Services: React.FC = () => {
+  const services = [
     {
-      icon: Home,
-      title: 'Privatumzüge',
-      description: 'Komplette Umzugsdienstleistungen für Privatkunden mit professioneller Verpackung und Transport. Wir kümmern uns um jeden Aspekt Ihres Umzugs.',
-      features: ['Verpackungsservice', 'Möbelmontage', 'Reinigungsservice', 'Versicherung inklusive'],
-      color: 'bg-blue-500',
-      image: '/images/services/private-move.jpg',
-      gradient: 'from-blue-500 to-blue-600'
+      icon: "🎨",
+      title: "Web Design",
+      description: "Beautiful, modern designs that capture your brand's essence and engage your audience.",
+      features: ["Responsive Design", "UI/UX Optimization", "Brand Integration", "Custom Illustrations"]
     },
     {
-      icon: Building,
-      title: 'Büroumzüge',
-      description: 'Spezialisierte Büroumzüge mit minimaler Ausfallzeit und IT-Equipment-Transport. Wir sorgen für einen reibungslosen Übergang.',
-      features: ['IT-Transport', 'Wochenendumzug', 'Aktenarchivierung', 'Minimale Ausfallzeiten'],
-      color: 'bg-green-500',
-      image: '/images/services/office-move.jpg',
-      gradient: 'from-green-500 to-green-600'
+      icon: "⚡",
+      title: "Web Development",
+      description: "Fast, scalable websites built with the latest technologies and best practices.",
+      features: ["React/Next.js", "TypeScript", "Performance Optimization", "SEO Ready"]
     },
     {
-      icon: Truck,
-      title: 'Fernumzüge',
-      description: 'Deutschlandweite und europäische Umzüge mit Full-Service-Betreuung. Wir begleiten Sie von der Planung bis zur Ankunft.',
-      features: ['Zwischenlagerung', 'Zollabwicklung', 'Rundum-Betreuung', 'Internationale Transporte'],
-      color: 'bg-purple-500',
-      image: '/images/services/long-distance.jpg',
-      gradient: 'from-purple-500 to-purple-600'
+      icon: "🛒",
+      title: "E-Commerce",
+      description: "Complete online stores that drive sales and provide excellent customer experiences.",
+      features: ["Payment Integration", "Inventory Management", "Order Processing", "Customer Accounts"]
     },
     {
-      icon: Package,
-      title: 'Express Transport',
-      description: 'Schnelle Kurier- und Expresstransporte für dringende Sendungen. Wir garantieren pünktliche Lieferung auch unter Zeitdruck.',
-      features: ['Same-Day Delivery', 'Overnight Service', 'Fragile Handling', '24/7 Verfügbarkeit'],
-      color: 'bg-orange-500',
-      image: '/images/services/express-transport.jpg',
-      gradient: 'from-orange-500 to-orange-600'
+      icon: "📱",
+      title: "Mobile Apps",
+      description: "Native and cross-platform mobile applications for iOS and Android.",
+      features: ["React Native", "Native Development", "App Store Optimization", "Push Notifications"]
     },
     {
-      icon: Clock,
-      title: 'Entrümpelung',
-      description: 'Professionelle Haushaltsauflösungen und Entrümpelungen mit fachgerechter Entsorgung. Wir übernehmen die komplette Abwicklung.',
-      features: ['Wertanrechnung', 'Fachgerechte Entsorgung', 'Reinigung', 'Umweltfreundlich'],
-      color: 'bg-red-500',
-      image: '/images/services/clearance.jpg',
-      gradient: 'from-red-500 to-red-600'
+      icon: "🔍",
+      title: "SEO & Marketing",
+      description: "Comprehensive digital marketing strategies to grow your online presence.",
+      features: ["Search Engine Optimization", "Content Marketing", "Social Media", "Analytics"]
     },
     {
-      icon: Shield,
-      title: 'Lagerung',
-      description: 'Sichere Zwischenlagerung Ihres Eigentums in unseren modernen Lagerhallen. Klimakontrolle und 24/7 Überwachung inklusive.',
-      features: ['Klimakontrolle', '24/7 Überwachung', 'Flexible Laufzeiten', 'Vollversichert'],
-      color: 'bg-indigo-500',
-      image: '/images/services/storage.jpg',
-      gradient: 'from-indigo-500 to-indigo-600'
+      icon: "🛠️",
+      title: "Maintenance",
+      description: "Ongoing support and maintenance to keep your website running smoothly.",
+      features: ["Security Updates", "Performance Monitoring", "Content Updates", "Technical Support"]
     },
+    {
+      icon: "🚀",
+      title: "Performance",
+      description: "Optimize your website for speed and user experience.",
+      features: ["Speed Optimization", "Core Web Vitals", "Caching", "CDN Setup"]
+    },
+    {
+      icon: "🔒",
+      title: "Security",
+      description: "Protect your website and data with enterprise-grade security measures.",
+      features: ["SSL Certificates", "Security Audits", "Backup Systems", "Malware Protection"]
+    }
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-white to-blue-50">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Unsere Dienstleistungen
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Our Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Von Privatumzügen bis zu komplexen Logistiklösungen - wir bieten Ihnen 
-            den kompletten Service aus einer Hand. Kontaktieren Sie uns für ein individuelles Angebot.
+            We offer comprehensive web development and design services to help your business 
+            succeed online. From concept to launch, we handle everything.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {servicesData.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1 overflow-hidden"
-            >
-              {/* Service Image */}
-              <div className="relative h-48 overflow-hidden">
-                {/* Background with Real Image */}
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent"></div>
-                
-                {/* Service Icon Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 group-hover:scale-110 transition-transform duration-300">
-                    <service.icon className="h-16 w-16 text-white" />
-                  </div>
-                </div>
-
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-xs font-medium">
+        {/* Horizontal Scrolling Services */}
+        <div className="scroll-track-wrapper">
+          <div className="scroll-track-left">
+            <div className="scroll-items">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-white border border-gray-200 rounded-2xl p-8 w-80 flex-shrink-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  {/* Icon */}
+                  <div className="text-5xl mb-6">{service.icon}</div>
+                  
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {service.title}
-                  </span>
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-600 mb-6">
+                    {service.description}
+                  </p>
+                  
+                  {/* Features */}
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                        <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  {/* CTA Button */}
+                  <button className="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                    Learn More
+                  </button>
                 </div>
-
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
-              </div>
-  
-              {/* Service Content */}
-              <div className="p-8">
-                <div className="flex items-start justify-between mb-6">
-                  <div className={`${service.color} p-3 rounded-xl text-white group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon className="h-6 w-6" />
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm font-medium text-blue-600">Individuelles Angebot</div>
-                  </div>
+              ))}
+              
+              {/* Duplicate items for seamless loop */}
+              {services.map((service, index) => (
+                <div
+                  key={`duplicate-${index}`}
+                  className="bg-white border border-gray-200 rounded-2xl p-8 w-80 flex-shrink-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  {/* Icon */}
+                  <div className="text-5xl mb-6">{service.icon}</div>
+                  
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {service.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-600 mb-6">
+                    {service.description}
+                  </p>
+                  
+                  {/* Features */}
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                        <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  {/* CTA Button */}
+                  <button className="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                    Learn More
+                  </button>
                 </div>
-    
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-    
-                <div className="space-y-3 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <span className="text-sm text-gray-600">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-    
-                <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors group-hover:shadow-lg">
-                  Angebot anfordern
-                </button>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
         {/* CTA Section */}
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
-              Individuelle Beratung gewünscht?
+        <div className="text-center mt-16">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 lg:p-12 text-white">
+            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+              Need a Custom Solution?
             </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Jeder Transport ist einzigartig. Lassen Sie sich von unseren Experten beraten und erhalten Sie ein maßgeschneidertes Angebot für Ihre spezifischen Anforderungen.
+            <p className="text-lg mb-8 opacity-90">
+              We specialize in creating custom web solutions tailored to your specific needs. 
+              Let's discuss your project and find the perfect approach.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#contact"
-                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Kostenlose Beratung
-              </a>
-              <a
-                href="tel:+4917012345678"
-                className="bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors"
-              >
-                Direkt anrufen
-              </a>
+              <button className="btn-animated-big bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors">
+                Get Free Quote
+              </button>
+              <button className="btn-animated-big border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                Schedule Call
+              </button>
             </div>
           </div>
         </div>
