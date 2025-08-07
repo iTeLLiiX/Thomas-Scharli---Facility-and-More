@@ -1,218 +1,157 @@
-# 🚛 Scharli Transport Website
+# 🚀 Thomas Scharli - Facility and More Website
 
-Eine moderne, responsive Transport- und Umzugs-Website mit Admin-Panel und Bildverwaltung.
+Eine moderne, responsive Website für Thomas Scharli mit vollständigem Admin-Panel und Button-Verwaltung.
 
-## 🚀 Live Demo
+## 🌟 Features
 
-Die Website ist live verfügbar unter: [Ihre-Vercel-URL]
-
-## ✨ Features
-
+### 🎯 Hauptfunktionen
 - **Responsive Design** - Optimiert für alle Geräte
-- **Admin-Panel** - Vollständige Bildverwaltung
-- **Kontaktformular** - Mehrstufiges Formular mit Prompt Enhancement
-- **Kostenrechner** - Unverbindliche Anfrage-Einschätzung
-- **Chat-Widget** - Live-Chat mit Thomas Scharli Bot
-- **Bildergalerie** - Mit Lightbox und Kategorie-Filter
-- **SEO-optimiert** - Für bessere Suchmaschinen-Rankings
+- **Moderne UI/UX** - Mit Tailwind CSS und Lucide Icons
+- **Smooth Scrolling** - Mit Lenis Scroll-Animation
+- **Admin-Panel** - Vollständige Website-Verwaltung
+- **Button-Verwaltung** - Alle Buttons bearbeitbar
+- **Projektverwaltung** - CRUD-Operationen für Projekte
+- **Bildverwaltung** - Upload und Organisation von Bildern
+
+### 🔐 Admin-Bereich
+- **Login-Daten:** 
+  - Benutzername: `thomas`
+  - Passwort: `hodenkobold`
+- **Verfügbare Tabs:**
+  - 📊 Dashboard - Übersicht und Statistiken
+  - 📁 Projekte - Projektverwaltung
+  - 🖱️ Button-Verwaltung - Alle Buttons bearbeiten
+  - 🖼️ Bildverwaltung - Bilder hochladen und verwalten
+  - ✏️ Website-Inhalt - Texte und Kontaktdaten
+  - 👥 Benutzer - Benutzerverwaltung (zukünftig)
+  - ⚙️ Einstellungen - Website-Konfiguration
+
+### 🎛️ Button-Verwaltung
+Alle Buttons der Website können im Admin-Bereich bearbeitet werden:
+
+- **📞 Jetzt anrufen** - Telefonnummer wählen
+- **💬 Kostenloses Angebot anfordern** - Zum Kontaktformular scrollen
+- **🚀 Projekt starten** - Zum Kontaktformular scrollen
+- **📅 Termin vereinbaren** - Calendly-Link öffnen
+- **👁️ Arbeiten ansehen** - Zur Work-Sektion scrollen
+- **✉️ E-Mail senden** - E-Mail-Client öffnen
 
 ## 🛠️ Technologie-Stack
 
 - **Frontend:** React 18 + TypeScript
 - **Styling:** Tailwind CSS
-- **Build Tool:** Vite
 - **Icons:** Lucide React
-- **Deployment:** Vercel
+- **Animation:** GSAP + Lenis
+- **Build Tool:** Vite
+- **Deployment:** GitHub Pages + GitHub Actions
 
-## 📦 Installation
+## 🚀 Installation & Entwicklung
 
 ### Voraussetzungen
-- Node.js 18+ 
+- Node.js 18+
 - npm oder yarn
 
-### Lokale Entwicklung
-
-1. **Repository klonen**
+### Installation
 ```bash
-git clone https://github.com/ihr-username/scharli-transport.git
-cd scharli-transport
-```
+# Repository klonen
+git clone https://github.com/iTeLLiiX/Thomas-Scharli---Facility-and-More.git
+cd Thomas-Scharli---Facility-and-More/project
 
-2. **Dependencies installieren**
-```bash
+# Dependencies installieren
 npm install
-```
 
-3. **Entwicklungsserver starten**
-```bash
+# Entwicklungsserver starten
 npm run dev
-```
 
-4. **Browser öffnen**
-```
-http://localhost:5173
-```
-
-## 🚀 Deployment auf Vercel
-
-### 1. GitHub Repository erstellen
-
-```bash
-# Git initialisieren
-git init
-
-# Alle Dateien hinzufügen
-git add .
-
-# Ersten Commit erstellen
-git commit -m "Initial commit: Scharli Transport Website"
-
-# GitHub Repository erstellen (manuell auf github.com)
-# Dann remote hinzufügen
-git remote add origin https://github.com/ihr-username/scharli-transport.git
-
-# Auf GitHub pushen
-git push -u origin main
-```
-
-### 2. Vercel Deployment
-
-1. **Vercel Account erstellen**
-   - Gehen Sie zu [vercel.com](https://vercel.com)
-   - Registrieren Sie sich mit Ihrem GitHub Account
-
-2. **Neues Projekt erstellen**
-   - Klicken Sie auf "New Project"
-   - Wählen Sie Ihr GitHub Repository aus
-   - Vercel erkennt automatisch, dass es ein Vite-Projekt ist
-
-3. **Build-Einstellungen**
-   - **Framework Preset:** Vite
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-   - **Install Command:** `npm install`
-
-4. **Environment Variables** (optional)
-   ```
-   VITE_APP_TITLE=Scharli Transport
-   VITE_CONTACT_PHONE=+4917012345678
-   VITE_CONTACT_EMAIL=info@scharli-transport.de
-   ```
-
-5. **Deploy klicken**
-   - Vercel baut und deployed automatisch
-   - Ihre Website ist in wenigen Minuten live!
-
-### 3. Custom Domain (optional)
-
-1. **Domain hinzufügen**
-   - Gehen Sie zu Project Settings > Domains
-   - Fügen Sie Ihre Domain hinzu (z.B. scharli-transport.de)
-
-2. **DNS konfigurieren**
-   - Folgen Sie den Vercel-Anweisungen für DNS-Einstellungen
-   - Warten Sie auf DNS-Propagation (bis zu 48 Stunden)
-
-## 🔧 Build & Deployment
-
-### Lokaler Build
-```bash
+# Produktions-Build erstellen
 npm run build
-```
 
-### Build testen
-```bash
+# Build testen
 npm run preview
-```
-
-### Linting
-```bash
-npm run lint
 ```
 
 ## 📁 Projektstruktur
 
 ```
-src/
-├── components/          # React Komponenten
-│   ├── AdminPanel.tsx   # Admin-Verwaltung
-│   ├── Calculator.tsx   # Kostenrechner
-│   ├── Contact.tsx      # Kontaktformular
-│   ├── Gallery.tsx      # Bildergalerie
-│   ├── Header.tsx       # Navigation
-│   ├── Hero.tsx         # Hero-Bereich
-│   ├── ImageManager.tsx # Bildverwaltung
-│   ├── Services.tsx     # Dienstleistungen
-│   └── ...
-├── App.tsx              # Haupt-App-Komponente
-├── main.tsx             # App-Einstiegspunkt
-└── index.css            # Globale Styles
-
-public/
-├── images/              # Bilder (siehe images/README.md)
-└── index.html           # HTML-Template
+project/
+├── src/
+│   ├── components/
+│   │   ├── AdminPanel.tsx          # Haupt-Admin-Panel
+│   │   ├── ButtonActions.tsx       # Button-Verwaltung
+│   │   ├── ProjectEditor.tsx       # Projekt-Editor
+│   │   ├── Contact.tsx             # Kontaktsektion
+│   │   ├── Hero.tsx                # Hero-Bereich
+│   │   ├── CTASection.tsx          # Call-to-Action
+│   │   └── ...                     # Weitere Komponenten
+│   ├── App.tsx                     # Haupt-App-Komponente
+│   └── main.tsx                    # App-Einstiegspunkt
+├── .github/workflows/
+│   └── static.yml                  # GitHub Actions Deployment
+└── dist/                           # Build-Ausgabe
 ```
 
-## 🔐 Admin-Zugang
+## 🌐 Deployment
 
-- **URL:** [Ihre-Website]/admin
-- **Benutzername:** `admin`
-- **Passwort:** `admin123`
+Die Website wird automatisch über GitHub Actions deployed:
 
-**⚠️ Wichtig:** Ändern Sie das Passwort in der Produktion!
+1. **Automatisches Deployment** bei jedem Push auf `main`
+2. **GitHub Pages** Hosting
+3. **Live-URL:** https://itellix.github.io/Thomas-Scharli---Facility-and-More/
 
-## 🖼️ Bildintegration
+### Deployment-Prozess
+1. Code wird auf `main` Branch gepusht
+2. GitHub Actions Workflow startet automatisch
+3. Dependencies werden installiert
+4. Website wird gebaut (`npm run build`)
+5. Build wird auf GitHub Pages deployed
 
-Siehe [public/images/README.md](public/images/README.md) für detaillierte Anweisungen zur Bildintegration.
+## 🔧 Konfiguration
 
-## 🔄 Automatisches Deployment
+### Admin-Panel Zugang
+- **URL:** Klicken Sie auf den "Admin" Button im Header
+- **Benutzername:** thomas
+- **Passwort:** hodenkobold
 
-Nach dem ersten Setup:
-- Jeder Push auf `main` Branch deployed automatisch
-- Vercel erstellt automatisch Preview-Deployments für Pull Requests
-- Rollback zu vorherigen Versionen möglich
+### Button-Verwaltung
+1. Im Admin-Panel auf "Button-Verwaltung" klicken
+2. Buttons können bearbeitet, getestet und aktiviert/deaktiviert werden
+3. Änderungen werden sofort übernommen
 
-## 📊 Analytics & Monitoring
+### Projektverwaltung
+1. Im Admin-Panel auf "Projekte" klicken
+2. Neue Projekte hinzufügen oder bestehende bearbeiten
+3. Detaillierte Projektinformationen (Kunde, Budget, Standort, etc.)
 
-### Vercel Analytics (optional)
-1. Gehen Sie zu Project Settings > Analytics
-2. Analytics aktivieren
-3. Tracking-Code wird automatisch eingefügt
+## 📞 Kontakt
 
-### Performance Monitoring
-- Vercel bietet automatisches Performance-Monitoring
-- Core Web Vitals werden gemessen
-- Automatische Optimierungen
+- **Website:** https://itellix.github.io/Thomas-Scharli---Facility-and-More/
+- **GitHub:** https://github.com/iTeLLiiX/Thomas-Scharli---Facility-and-More
+- **E-Mail:** hello@webseite-scharli.de
+- **Telefon:** +49 170 123 456 78
 
-## 🔒 Sicherheit
+## 📝 Changelog
 
-- **HTTPS:** Automatisch von Vercel bereitgestellt
-- **Security Headers:** Automatisch konfiguriert
-- **DDoS Protection:** Eingebaut in Vercel
-- **CDN:** Globale Verteilung für bessere Performance
+### Version 1.0.0 (Aktuell)
+- ✅ Vollständiges Admin-Panel implementiert
+- ✅ Button-Verwaltung hinzugefügt
+- ✅ Projektverwaltung mit CRUD-Operationen
+- ✅ Responsive Design für alle Geräte
+- ✅ GitHub Pages Deployment
+- ✅ Automatisches CI/CD mit GitHub Actions
 
-## 📱 Mobile Optimierung
+## 🤝 Beitragen
 
-- **Responsive Design:** Optimiert für alle Bildschirmgrößen
-- **Touch-friendly:** Große Touch-Targets
-- **Fast Loading:** Optimierte Bilder und Assets
-- **PWA-ready:** Kann als Progressive Web App konfiguriert werden
+1. Repository forken
+2. Feature Branch erstellen (`git checkout -b feature/AmazingFeature`)
+3. Änderungen committen (`git commit -m 'Add some AmazingFeature'`)
+4. Branch pushen (`git push origin feature/AmazingFeature`)
+5. Pull Request erstellen
 
-## 🆘 Support
+## 📄 Lizenz
 
-Bei Problemen:
-1. **Vercel Logs** - Gehen Sie zu Project > Functions > View Function Logs
-2. **Build Logs** - Gehen Sie zu Project > Deployments > View Build Logs
-3. **GitHub Issues** - Erstellen Sie ein Issue in Ihrem Repository
-
-## 📈 Performance
-
-- **Lighthouse Score:** 95+ (Performance, Accessibility, Best Practices, SEO)
-- **First Contentful Paint:** < 1.5s
-- **Largest Contentful Paint:** < 2.5s
-- **Cumulative Layout Shift:** < 0.1
+Dieses Projekt ist für Thomas Scharli entwickelt. Alle Rechte vorbehalten.
 
 ---
 
-**Viel Erfolg mit Ihrer Scharli Transport Website!** 🚛✨
+**Entwickelt mit ❤️ für Thomas Scharli - Facility and More**
 
