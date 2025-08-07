@@ -7,46 +7,46 @@ const Services = () => {
 
   const services = [
     {
-      icon: "💻",
-      title: "Webentwicklung",
-      description: "Moderne Websites und Webanwendungen mit React, TypeScript und Tailwind CSS.",
-      features: ["React", "TypeScript", "Responsive Design", "SEO Optimierung"],
-      image: "/images/services/web-development.jpg"
+      icon: "🚛",
+      title: "Transport Services",
+      description: "Professioneller Transport von Möbeln, Fahrzeugen (außer PKW) und verschiedenen Gütern",
+      features: ["Möbeltransport und Umzüge", "Fahrzeugtransport (LKW, Motorräder, etc.)", "Spezialtransporte für verschiedene Güter", "Deutschlandweite Abholung und Lieferung"],
+      image: "/images/services/transport.jpg"
     },
     {
-      icon: "🎨",
-      title: "Webdesign",
-      description: "Professionelle Designs, die Ihr Unternehmen perfekt präsentieren.",
-      features: ["UI/UX Design", "Branding", "Prototyping", "Design System"],
-      image: "/images/services/web-design.jpg"
+      icon: "🏭",
+      title: "Lager Services",
+      description: "Sichere und moderne Lagerung in unserem großen Lagerhaus",
+      features: ["Kurzzeit- und Langzeitlagerung", "Klimakontrollierte Räume", "24/7 Überwachung und Sicherheit", "Flexible Lagergrößen nach Bedarf"],
+      image: "/images/services/warehouse.jpg"
     },
     {
-      icon: "📱",
-      title: "Mobile First",
-      description: "Responsive Websites, die auf allen Geräten perfekt funktionieren.",
-      features: ["Mobile Optimierung", "Touch Friendly", "Performance", "PWA"],
-      image: "/images/services/mobile-first.jpg"
+      icon: "📦",
+      title: "Verpackung",
+      description: "Professionelle Verpackung und Sicherung Ihrer Güter für den Transport",
+      features: ["Spezialverpackung", "Sicherung", "Materialien", "Qualitätssicherung"],
+      image: "/images/services/packaging.jpg"
+    },
+    {
+      icon: "🌍",
+      title: "International",
+      description: "Transport und Lagerung in ganz Deutschland und angrenzenden Ländern",
+      features: ["Deutschlandweit", "EU-Transport", "Zollabwicklung", "Internationale Partner"],
+      image: "/images/services/international.jpg"
     },
     {
       icon: "⚡",
-      title: "Performance",
-      description: "Schnelle und optimierte Websites für beste Nutzererfahrung.",
-      features: ["Ladezeiten", "SEO", "Core Web Vitals", "Optimierung"],
-      image: "/images/services/performance.jpg"
+      title: "Express Service",
+      description: "Schnelle Lieferung für zeitkritische Transporte",
+      features: ["24h Service", "Express Lieferung", "Priorität", "Tracking"],
+      image: "/images/services/express.jpg"
     },
     {
-      icon: "🔧",
-      title: "Wartung",
-      description: "Regelmäßige Updates und Wartung für Ihre Website.",
-      features: ["Updates", "Backups", "Monitoring", "Support"],
-      image: "/images/services/maintenance.jpg"
-    },
-    {
-      icon: "🚀",
-      title: "Deployment",
-      description: "Professionelles Hosting und Deployment Ihrer Website.",
-      features: ["Hosting", "SSL", "CDN", "Monitoring"],
-      image: "/images/services/deployment.jpg"
+      icon: "🛡️",
+      title: "Versicherung",
+      description: "Vollständige Versicherung für Ihre Güter während Transport und Lagerung",
+      features: ["Transportversicherung", "Lagerversicherung", "Haftung", "Schadensregulierung"],
+      image: "/images/services/insurance.jpg"
     }
   ];
 
@@ -61,14 +61,20 @@ const Services = () => {
         <Settings className="w-6 h-6" />
       </button>
 
+      {/* Admin Panel */}
+      <AdminPanel 
+        isOpen={showAdminPanel} 
+        onClose={() => setShowAdminPanel(false)} 
+      />
+
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Unsere Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Wir bieten umfassende Webentwicklungs- und Design-Services. 
-            Von der Konzeption bis zum Launch - wir sind Ihr Partner für digitale Lösungen.
+            Professionelle Transport- und Lagerlösungen für Ihre individuellen Anforderungen. 
+            Vertrauen Sie auf unsere langjährige Erfahrung und modernen Service.
           </p>
         </div>
 
@@ -102,33 +108,64 @@ const Services = () => {
                   </p>
                   
                   {/* Features */}
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                        <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
                         {feature}
                       </li>
                     ))}
                   </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Right Scrolling Track */}
+        <div className="scroll-track-wrapper mt-8">
+          <div className="scroll-track-right">
+            <div className="scroll-items">
+              {services.slice().reverse().map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-white border border-gray-200 rounded-2xl p-8 w-80 flex-shrink-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  {/* Service Image */}
+                  <div className="mb-6">
+                    <div className="w-full h-48 bg-gradient-to-br from-green-600 to-blue-600 rounded-xl flex items-center justify-center">
+                      <div className="text-6xl">{service.icon}</div>
+                    </div>
+                  </div>
                   
-                  {/* CTA Button */}
-                  <button className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                    Mehr erfahren
-                  </button>
+                  {/* Icon */}
+                  <div className="text-3xl mb-4">{service.icon}</div>
+                  
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {service.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-600 mb-6">
+                    {service.description}
+                  </p>
+                  
+                  {/* Features */}
+                  <ul className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-
-      {/* Admin Panel */}
-      <AdminPanel 
-        isOpen={showAdminPanel} 
-        onClose={() => setShowAdminPanel(false)} 
-      />
     </section>
   );
 };
