@@ -4,15 +4,15 @@ import { Phone, Mail, MapPin, Clock, ArrowRight, Truck, Shield, Users } from 'lu
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center">
-      {/* Background with Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600">
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute top-40 right-32 w-24 h-24 bg-blue-300 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-32 left-1/3 w-40 h-40 bg-white rounded-full blur-3xl"></div>
+      {/* Background with Real Image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/hero/hero-main.jpg"
+          alt="Scharli Transport - Professionelle Transporte"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-blue-600/80">
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
       </div>
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Home, Building, Truck, Package, Clock, Shield } from 'lucide-react';
+import { Home, Building, Truck, Package, Clock, Shield, ArrowRight, Phone } from 'lucide-react';
 
 const Services = () => {
-  const services = [
+  const servicesData = [
     {
       icon: Home,
       title: 'Privatumzüge',
@@ -60,9 +60,8 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-gradient-to-br from-white to-blue-50">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             Unsere Dienstleistungen
@@ -73,19 +72,21 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {services.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {servicesData.map((service, index) => (
             <div
               key={index}
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1 overflow-hidden"
             >
               {/* Service Image */}
               <div className="relative h-48 overflow-hidden">
-                {/* Background Image or Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-90`}>
-                  <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-                </div>
+                {/* Background with Real Image */}
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent"></div>
                 
                 {/* Service Icon Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -104,7 +105,7 @@ const Services = () => {
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
               </div>
-
+  
               {/* Service Content */}
               <div className="p-8">
                 <div className="flex items-start justify-between mb-6">
@@ -115,14 +116,14 @@ const Services = () => {
                     <div className="text-sm font-medium text-blue-600">Individuelles Angebot</div>
                   </div>
                 </div>
-
+    
                 <h3 className="text-xl font-bold text-gray-800 mb-3">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   {service.description}
                 </p>
-
+    
                 <div className="space-y-3 mb-6">
                   {service.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center space-x-2">
@@ -131,7 +132,7 @@ const Services = () => {
                     </div>
                   ))}
                 </div>
-
+    
                 <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors group-hover:shadow-lg">
                   Angebot anfordern
                 </button>
