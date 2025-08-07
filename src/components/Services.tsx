@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
-import AdminPanel from './AdminPanel';
-import { Settings } from 'lucide-react';
+import React from 'react';
 
 const Services = () => {
-  const [showAdminPanel, setShowAdminPanel] = useState(false);
-
   const services = [
     {
       icon: "🚛",
@@ -52,21 +48,6 @@ const Services = () => {
 
   return (
     <section id="services" className="py-20 bg-gray-50">
-      {/* Admin Button */}
-      <button
-        onClick={() => setShowAdminPanel(true)}
-        className="fixed bottom-4 right-4 z-40 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors"
-        title="Admin Panel"
-      >
-        <Settings className="w-6 h-6" />
-      </button>
-
-      {/* Admin Panel */}
-      <AdminPanel 
-        isOpen={showAdminPanel} 
-        onClose={() => setShowAdminPanel(false)} 
-      />
-
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
