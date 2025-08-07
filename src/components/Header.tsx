@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Shield } from 'lucide-react';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onAdminLogin?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onAdminLogin }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -45,8 +50,19 @@ const Header: React.FC = () => {
             </a>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* Desktop Buttons */}
+          <div className="hidden lg:flex items-center space-x-4">
+            {/* Admin Login Button */}
+            <button
+              onClick={onAdminLogin}
+              className="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-gray-800 font-medium transition-colors"
+              title="Admin-Login"
+            >
+              <Shield className="h-4 w-4" />
+              <span>Admin</span>
+            </button>
+            
+            {/* CTA Button */}
             <button className="btn-animated-big bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors">
               Start now
             </button>
@@ -108,6 +124,19 @@ const Header: React.FC = () => {
               >
                 FAQ
               </a>
+              
+              {/* Mobile Admin Login Button */}
+              <button
+                onClick={() => {
+                  onAdminLogin?.();
+                  setIsMobileMenuOpen(false);
+                }}
+                className="w-full flex items-center justify-center space-x-2 px-3 py-2 text-gray-700 hover:text-gray-900 font-medium"
+              >
+                <Shield className="h-4 w-4" />
+                <span>Admin-Login</span>
+              </button>
+              
               <div className="px-3 py-2">
                 <button className="w-full bg-black text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-800 transition-colors">
                   Start now
