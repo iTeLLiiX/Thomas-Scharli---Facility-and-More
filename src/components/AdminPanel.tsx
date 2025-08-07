@@ -13,7 +13,8 @@ import {
   X,
   Upload,
   Eye,
-  LogOut
+  LogOut,
+  Camera
 } from 'lucide-react';
 
 interface AdminPanelProps {
@@ -42,6 +43,7 @@ interface ContentData {
     description: string;
     image: string;
     category: string;
+    images?: string[]; // Neue Eigenschaft für mehrere Bilder
   }>;
   contact: {
     phone: string;
@@ -86,14 +88,16 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
         title: "Büroumzug München",
         description: "Kompletter Büroumzug mit 50 Arbeitsplätzen",
         image: "/images/gallery/gallery-7.jpg",
-        category: "Büroumzug"
+        category: "Büroumzug",
+        images: ["/images/gallery/gallery-7.jpg", "/images/gallery/gallery-1.jpg", "/images/gallery/gallery-2.jpg"]
       },
       {
         id: "2",
         title: "Möbeltransport Hamburg",
         description: "Antike Möbel sicher transportiert",
         image: "/images/gallery/gallery-2.jpg",
-        category: "Transport"
+        category: "Transport",
+        images: ["/images/gallery/gallery-2.jpg", "/images/gallery/gallery-3.jpg"]
       }
     ],
     contact: {
@@ -107,6 +111,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
   const [editingService, setEditingService] = useState<string | null>(null);
   const [editingProject, setEditingProject] = useState<string | null>(null);
   const [newImage, setNewImage] = useState<File | null>(null);
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
   // Sichere Authentifizierung
   const validateCredentials = (user: string, pass: string): boolean => {
@@ -166,7 +171,8 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
       title: "Neues Projekt",
       description: "Beschreibung des neuen Projekts",
       image: "/images/gallery/placeholder.jpg",
-      category: "Transport"
+      category: "Transport",
+      images: ["/images/gallery/placeholder.jpg"]
     };
     setContentData(prev => ({
       ...prev,
@@ -190,6 +196,69 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
       // Hier würde normalerweise das Bild hochgeladen werden
       alert(`Bild "${file.name}" wurde ausgewählt`);
     }
+  };
+
+  const addImageToProject = (projectId: string) => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.onchange = (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0];
+      if (file) {
+        // Hier würde normalerweise das Bild hochgeladen werden
+        const newImagePath = `/images/gallery/new-image-${Date.now()}.jpg`;
+        
+        setContentData(prev => ({
+          ...prev,
+          projects: prev.projects.map(project => {
+            if (project.id === projectId) {
+              return {
+                ...project,
+                images: [...(project.images || []), newImagePath]
+              };
+            }
+            return project;
+          })
+        }));
+        
+        alert(`Bild "${file.name}" wurde zum Projekt hinzugefügt!`);
+      }
+    };
+    input.click();
+  };
+
+  const removeImageFromProject = (projectId: string, imageIndex: number) => {
+    if (confirm('Bild wirklich entfernen?')) {
+      setContentData(prev => ({
+        ...prev,
+        projects: prev.projects.map(project => {
+          if (project.id === projectId) {
+            const newImages = [...(project.images || [])];
+            newImages.splice(imageIndex, 1);
+            return {
+              ...project,
+              images: newImages
+            };
+          }
+          return project;
+        })
+      }));
+    }
+  };
+
+  const setMainImage = (projectId: string, imagePath: string) => {
+    setContentData(prev => ({
+      ...prev,
+      projects: prev.projects.map(project => {
+        if (project.id === projectId) {
+          return {
+            ...project,
+            image: imagePath
+          };
+        }
+        return project;
+      })
+    }));
   };
 
   if (!isOpen) return null;
@@ -394,7 +463,9 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold">Bilder</h3>
-                    <p className="text-2xl font-bold text-purple-600">12</p>
+                    <p className="text-2xl font-bold text-purple-600">
+                      {contentData.projects.reduce((total, project) => total + (project.images?.length || 1), 0)}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -619,13 +690,67 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
                       </div>
                     ) : (
                       <div>
-                        <div className="bg-gray-200 rounded-lg h-32 mb-4 flex items-center justify-center">
-                          <Image className="w-8 h-8 text-gray-400" />
+                        {/* Hauptbild */}
+                        <div className="relative mb-4">
+                          <div className="bg-gray-200 rounded-lg h-32 flex items-center justify-center">
+                            <Image className="w-8 h-8 text-gray-400" />
+                          </div>
+                          <div className="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">
+                            Hauptbild
+                          </div>
                         </div>
+                        
                         <p className="text-gray-600 mb-2">{project.description}</p>
-                        <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                        <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mb-4">
                           {project.category}
                         </span>
+                        
+                        {/* Projektbilder */}
+                        <div className="mb-4">
+                          <div className="flex justify-between items-center mb-2">
+                            <h4 className="text-sm font-medium text-gray-700">Projektbilder ({project.images?.length || 1})</h4>
+                            <button
+                              onClick={() => addImageToProject(project.id)}
+                              className="text-blue-600 hover:text-blue-700 text-sm flex items-center space-x-1"
+                            >
+                              <Camera className="w-4 h-4" />
+                              <span>Bild hinzufügen</span>
+                            </button>
+                          </div>
+                          
+                          <div className="grid grid-cols-3 gap-2">
+                            {project.images?.map((image, index) => (
+                              <div key={index} className="relative group">
+                                <div className="bg-gray-200 rounded-lg h-16 flex items-center justify-center">
+                                  <Image className="w-4 h-4 text-gray-400" />
+                                </div>
+                                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-200 rounded-lg flex items-center justify-center">
+                                  <div className="opacity-0 group-hover:opacity-100 flex space-x-1">
+                                    <button
+                                      onClick={() => setMainImage(project.id, image)}
+                                      className="bg-blue-600 text-white p-1 rounded text-xs"
+                                      title="Als Hauptbild setzen"
+                                    >
+                                      <Eye className="w-3 h-3" />
+                                    </button>
+                                    <button
+                                      onClick={() => removeImageFromProject(project.id, index)}
+                                      className="bg-red-600 text-white p-1 rounded text-xs"
+                                      title="Bild entfernen"
+                                    >
+                                      <Trash2 className="w-3 h-3" />
+                                    </button>
+                                  </div>
+                                </div>
+                                {project.image === image && (
+                                  <div className="absolute top-1 left-1 bg-green-600 text-white text-xs px-1 py-0.5 rounded">
+                                    Haupt
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     )}
                   </div>
