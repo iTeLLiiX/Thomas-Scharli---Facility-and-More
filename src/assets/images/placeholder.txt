@@ -1,0 +1,21 @@
+# 📸 Bilder-Ordner für Thomas Schärli - Facility and More
+
+Dieser Ordner ist für deine eigenen Bilder reserviert.
+
+## 📋 Benötigte Bilder:
+
+1. hero-truck.jpg - Hauptbild (LKW/Transport)
+2. about-thomas.jpg - Portrait/Team-Foto
+3. portfolio-1.jpg - Büroumzug
+4. portfolio-2.jpg - Möbeltransport  
+5. portfolio-3.jpg - Lagerhaus
+6. portfolio-4.jpg - Fahrzeugtransport
+7. warehouse.jpg - Lagerhaus (Services)
+8. logo.png - Firmenlogo (optional)
+
+## 🚀 Nächste Schritte:
+1. Deine Bilder hier hinzufügen
+2. Dateinamen wie oben verwenden
+3. Website starten mit: npm run dev
+
+Die Website funktioniert auch ohne deine Bilder - sie verwendet dann automatisch Fallback-Bilder.

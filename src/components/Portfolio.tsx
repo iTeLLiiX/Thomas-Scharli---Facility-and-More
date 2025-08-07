@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Quote } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
+import { images } from '../utils/imageImports';
 
 const Portfolio: React.FC = () => {
   const [activeTab, setActiveTab] = useState('projects');
@@ -8,22 +10,26 @@ const Portfolio: React.FC = () => {
     {
       title: "Büroumzug München",
       description: "Kompletter Büroumzug mit 50 Arbeitsplätzen",
-      image: "https://images.pexels.com/photos/7464230/pexels-photo-7464230.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: images.portfolio.project1,
+      fallback: images.portfolio.fallbacks[0]
     },
     {
       title: "Möbeltransport Hamburg",
       description: "Antike Möbel sicher transportiert",
-      image: "https://images.pexels.com/photos/7464722/pexels-photo-7464722.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: images.portfolio.project2,
+      fallback: images.portfolio.fallbacks[1]
     },
     {
       title: "Lagerhaltung Frankfurt",
       description: "6 Monate sichere Möbellagerung",
-      image: "https://images.pexels.com/photos/4481537/pexels-photo-4481537.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: images.portfolio.project3,
+      fallback: images.portfolio.fallbacks[2]
     },
     {
       title: "Fahrzeugtransport Berlin",
       description: "Motorrad sicher von Berlin nach Wien",
-      image: "https://images.pexels.com/photos/3964704/pexels-photo-3964704.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: images.portfolio.project4,
+      fallback: images.portfolio.fallbacks[3]
     }
   ];
 
@@ -61,8 +67,9 @@ const Portfolio: React.FC = () => {
           {projects.map((project, index) => (
             <div key={index} className="group cursor-pointer">
               <div className="overflow-hidden rounded-lg shadow-lg">
-                <img
+                <OptimizedImage
                   src={project.image}
+                  fallbackSrc={project.fallback}
                   alt={project.title}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Truck, Warehouse, MapPin, Phone } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
+import { images } from '../utils/imageImports';
 
 const Hero: React.FC = () => {
   return (
@@ -59,8 +61,9 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="relative">
-            <img 
-              src="https://images.pexels.com/photos/906494/pexels-photo-906494.jpeg?auto=compress&cs=tinysrgb&w=800" 
+            <OptimizedImage 
+              src={images.hero.truck}
+              fallbackSrc={images.hero.fallback}
               alt="Transport LKW" 
               className="rounded-lg shadow-xl"
             />

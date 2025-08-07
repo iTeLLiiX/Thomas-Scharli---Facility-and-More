@@ -1,5 +1,7 @@
 import React from 'react';
 import { Shield, Award, Users, MapPin } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
+import { images } from '../utils/imageImports';
 
 const About: React.FC = () => {
   return (
@@ -7,8 +9,9 @@ const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <img 
-              src="https://images.pexels.com/photos/4246266/pexels-photo-4246266.jpeg?auto=compress&cs=tinysrgb&w=800" 
+            <OptimizedImage 
+              src={images.about.thomas}
+              fallbackSrc={images.about.fallback}
               alt="Thomas Scharli" 
               className="rounded-lg shadow-lg"
             />
