@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ onAdminLogin }) => {
             {/* Admin Login Button */}
             <button
               onClick={onAdminLogin}
-              className="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-gray-800 font-medium transition-colors"
+              className="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-gray-800 font-medium transition-colors border border-gray-300 rounded-md hover:bg-gray-50"
               title="Admin-Login"
             >
               <Shield className="h-4 w-4" />
