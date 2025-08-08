@@ -3,16 +3,15 @@ import { Phone, Send } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+    <section className="relative min-h-screen bg-white pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-screen">
           {/* Left Column - Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight mb-6">
-              Transport &
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                Lagerlösungen
-              </span>
+              Professionelle 
+              <span className="text-blue-600"> Transport</span> & 
+              <span className="text-blue-600"> Lagerlösungen</span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
@@ -22,10 +21,11 @@ const Hero: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors">
+              <button className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors">
                 Kostenloses Angebot
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors">
+              <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors flex items-center justify-center gap-2">
+                <Phone className="h-5 w-5" />
                 Jetzt Anrufen
               </button>
             </div>
@@ -65,16 +65,16 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Hero Image/Animation */}
+          {/* Right Column - Hero Image */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-600 to-purple-600 p-8">
-              <div className="text-white text-center">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-8 text-white text-center">
                 <div className="text-6xl mb-4">🚛</div>
                 <h3 className="text-2xl font-bold mb-2">ETS Transport & Umzug</h3>
                 <p className="text-blue-100 mb-4">Professioneller Transport & Lagerung</p>
-                <div className="bg-white/20 rounded-lg p-4">
-                  <div className="text-3xl font-bold">15+</div>
-                  <div className="text-sm">Jahre Erfahrung</div>
+                <div className="bg-white/20 rounded-lg p-4 inline-block">
+                  <div className="text-3xl font-bold text-blue-600">15+</div>
+                  <div className="text-sm text-gray-700">Jahre Erfahrung</div>
                 </div>
               </div>
             </div>

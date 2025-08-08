@@ -59,7 +59,7 @@ const WorkSection: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Überzeugen Sie sich von unserer professionellen Arbeit anhand ausgewählter Projekte.
           </p>
-          <button className="mt-8 bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">
+          <button className="mt-8 bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
             Projekte
           </button>
         </div>

@@ -19,19 +19,15 @@ const AboutUs: React.FC = () => {
           {/* Right Column - Content */}
           <div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Über Thomas Scharli - Facility and More
+              Über <span className="text-blue-600">Thomas Scharli - Facility and More</span>
             </h2>
             
             <div className="space-y-4 text-lg text-gray-600 mb-8">
               <p>
-                Mit über 15 Jahren Erfahrung im Transport- und Logistikbereich sind wir Ihr 
-                vertrauensvoller Partner für alle Transport- und Lagerlösungen. Wir bieten 
-                maßgeschneiderte Lösungen für private und gewerbliche Kunden.
+                Mit über 15 Jahren Erfahrung in der Transport- und Logistikbranche haben wir uns als verlässlicher Partner für Privatkunden und Unternehmen etabliert. Unser Familienunternehmen steht für Qualität, Zuverlässigkeit und persönlichen Service.
               </p>
               <p>
-                Von kleinen Transporten bis hin zu großen Umzügen und langfristiger Lagerung 
-                - wir garantieren Zuverlässigkeit, Qualität und persönlichen Service. 
-                Unser Team arbeitet professionell und sorgfältig, um Ihre Wünsche zu erfüllen.
+                Wir bieten maßgeschneiderte Lösungen für Ihre individuellen Anforderungen - von kleineren Transporten bis hin zu großen Umzügen und langfristiger Lagerung in unserem modernen Lagerhaus.
               </p>
             </div>
 
@@ -78,7 +74,7 @@ const AboutUs: React.FC = () => {
               </div>
             </div>
 
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors">
+            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
               Persönliche Beratung vereinbaren
             </button>
           </div>

@@ -35,9 +35,7 @@ function App() {
       <AboutUs />
       <Services />
       <WorkSection />
-      <Testimonials />
       <Contact />
-      <CTASection />
       <Footer />
       <ChatWidget />
       <CookieConsent />

@@ -188,7 +188,7 @@ const Contact: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-4 px-6 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"
+                className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"
               >
                 <Send className="w-5 h-5" />
                 <span>Kostenloses Angebot anfordern</span>
