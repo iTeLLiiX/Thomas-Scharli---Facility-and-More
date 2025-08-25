@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import TeamSection from './components/TeamSection';
-import WhoWeAre from './components/WhoWeAre';
-import OurWork from './components/OurWork';
-import TechSolutions from './components/TechSolutions';
-import OfficeDay from './components/OfficeDay';
-import Webinars from './components/Webinars';
-import WorkWithUs from './components/WorkWithUs';
 import Services from './components/Services';
+import PortfolioGallery from './components/PortfolioGallery';
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
 import CookieConsent from './components/CookieConsent';
@@ -128,20 +122,45 @@ function App() {
         }
       );
     }
+
+    // Button hover animations
+    const tbtns = document.querySelectorAll(".btn1 a");
+    tbtns.forEach(function(tbtn: any) {
+      const style = window.getComputedStyle(tbtn);
+      const tbtnWidthWithoutPadding = tbtn.offsetWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+
+      const icon = tbtn.querySelector(".elementor-button-icon");
+      if (icon) {
+        const iconStyle = window.getComputedStyle(icon);
+        const iconWidth = icon.offsetWidth;
+
+        // Calculate the padding and margin values
+        const paddingToAdd = tbtnWidthWithoutPadding - iconWidth;
+        const newPaddingLeft = parseFloat(iconStyle.paddingLeft) + paddingToAdd;
+
+        // Add hover event listener to each tbtn
+        tbtn.addEventListener('mouseover', function() {
+          // Apply the padding and negative margin when hovering
+          icon.style.paddingLeft = `${newPaddingLeft}px`;
+          icon.style.marginLeft = `-${paddingToAdd}px`;
+        });
+
+        // Remove the padding and negative margin when hover ends
+        tbtn.addEventListener('mouseout', function() {
+          // Reset the styles when the mouse leaves
+          icon.style.paddingLeft = '';  // Reset to original padding
+          icon.style.marginLeft = '';   // Reset to original margin
+        });
+      }
+    });
   };
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <Header onAdminLogin={() => setIsAdminPanelOpen(true)} />
       <Hero />
-      <TeamSection />
-      <WhoWeAre />
-      <OurWork />
-      <TechSolutions />
-      <OfficeDay />
-      <Webinars />
-      <WorkWithUs />
       <Services />
+      <PortfolioGallery />
       <Footer />
       <ChatWidget />
       <CookieConsent />
