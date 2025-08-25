@@ -68,57 +68,18 @@ const Hero: React.FC = () => {
           {/* Right Column - Hero Image */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              {/* Van Image with Background - Like in Screenshot */}
-              <div className="relative h-96 bg-gradient-to-b from-blue-200 via-green-200 to-green-400">
-                {/* Sky with clouds */}
-                <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-blue-300 to-blue-200">
-                  <div className="absolute top-4 left-8 w-16 h-8 bg-white rounded-full opacity-60"></div>
-                  <div className="absolute top-6 right-12 w-12 h-6 bg-white rounded-full opacity-60"></div>
-                  <div className="absolute top-2 right-24 w-8 h-4 bg-white rounded-full opacity-60"></div>
-                </div>
-                
-                {/* Green field */}
-                <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-green-500 to-green-400">
-                  {/* Tree */}
-                  <div className="absolute bottom-0 right-8">
-                    <div className="w-4 h-16 bg-yellow-800 rounded-full"></div>
-                    <div className="absolute -top-8 -left-4 w-12 h-12 bg-green-700 rounded-full"></div>
-                  </div>
-                </div>
-                
-                {/* Van Image */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-80 h-48 bg-white rounded-lg shadow-lg flex items-center justify-center relative">
-                    <div className="text-center">
-                      <div className="text-4xl mb-2">🚛</div>
-                      <div className="text-sm text-gray-600 font-semibold">Weißer Lieferwagen</div>
-                    </div>
-                    
-                    {/* Van Decals - Left side */}
-                    <div className="absolute top-2 left-2 text-left">
-                      <div className="text-xs font-bold text-gray-900">THOMAS SCHARLI</div>
-                      <div className="text-xs text-blue-600 font-semibold">Transport & Umzug</div>
-                      <div className="text-xs text-gray-600">Tel: 0152 2135 1626</div>
-                    </div>
-                    
-                    {/* Van Decals - Right side */}
-                    <div className="absolute top-2 right-2 text-right">
-                      <div className="text-xs font-bold text-gray-900">FS</div>
-                      <div className="text-xs text-blue-600 font-semibold">Netzmontagen</div>
-                      <div className="text-xs text-gray-600">Tel: 0152 005 499 06</div>
-                    </div>
-                    
-                    {/* Slogan at bottom */}
-                    <div className="absolute bottom-2 left-0 right-0 text-center">
-                      <div className="text-xs font-semibold text-gray-700">Schnell | Sicher | Stressfrei</div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Experience Badge */}
-                <div className="absolute bottom-4 right-4 bg-white rounded-lg p-3 shadow-lg">
-                  <div className="text-2xl font-bold text-blue-600">15+</div>
-                  <div className="text-xs text-gray-600">Jahre Erfahrung</div>
+              <img 
+                src="/images/hero/hero-main.jpg" 
+                alt="Thomas Scharli Transport - Professioneller Transport und Lagerlösungen"
+                className="w-full h-auto object-cover"
+                loading="eager"
+              />
+              {/* Overlay with company info */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-6">
+                <div className="text-white">
+                  <h3 className="text-2xl font-bold mb-2">THOMAS SCHARLI</h3>
+                  <p className="text-lg opacity-90">Transport & Umzug</p>
+                  <p className="text-sm opacity-75">Professionelle Lösungen für Ihre Transportbedürfnisse</p>
                 </div>
               </div>
             </div>

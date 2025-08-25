@@ -13,56 +13,56 @@ const PortfolioGallery: React.FC = () => {
   const portfolioItems: PortfolioItem[] = [
     {
       id: 1,
-      title: "Fusion®",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=600&fit=crop",
+      title: "Transport & Umzug",
+      image: "/images/gallery/gallery-1.jpg",
       link: "#"
     },
     {
       id: 2,
-      title: "Panzer Collect",
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=600&fit=crop",
+      title: "Möbeltransport",
+      image: "/images/gallery/gallery-2.jpg",
       link: "#"
     },
     {
       id: 3,
-      title: "BikeUP™",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop",
+      title: "Fahrzeugtransport",
+      image: "/images/gallery/gallery-3.jpg",
       link: "#"
     },
     {
       id: 4,
-      title: "Basic Apparel",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=600&fit=crop",
+      title: "Lagerlösungen",
+      image: "/images/gallery/gallery-4.jpg",
       link: "#"
     },
     {
       id: 5,
-      title: "Shaping Shoe",
-      image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=600&fit=crop",
+      title: "Express-Transport",
+      image: "/images/gallery/gallery-5.jpg",
       link: "#"
     },
     {
       id: 6,
-      title: "ARkk Project",
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop",
+      title: "Langstrecken-Transport",
+      image: "/images/gallery/gallery-6.jpg",
       link: "#"
     },
     {
       id: 7,
-      title: "Bahne TML",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=600&fit=crop",
+      title: "Büroumzug",
+      image: "/images/gallery/gallery-7.jpg",
       link: "#"
     },
     {
       id: 8,
-      title: "Bahne TML",
-      image: "https://images.unsplash.com/photo-1556761175-4acf4b6c4e8c?w=400&h=600&fit=crop",
+      title: "Privatumzug",
+      image: "/images/gallery/gallery-8.jpg",
       link: "#"
     },
     {
       id: 9,
-      title: "DEA Clothing",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=600&fit=crop",
+      title: "Räumung & Entsorgung",
+      image: "/images/gallery/gallery-9.jpg",
       link: "#"
     }
   ];
@@ -84,16 +84,35 @@ const PortfolioGallery: React.FC = () => {
             <svg className="w-8 h-8 text-blue-500 mr-3" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
             </svg>
-            <span className="text-blue-400 font-medium">Our work</span>
+            <span className="text-blue-400 font-medium">Unsere Arbeit</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Explore some of<br />
-            <span className="text-blue-400">our projects</span>
+            Entdecken Sie unsere<br />
+            <span className="text-blue-400">Transportprojekte</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Each project in our collection reflects the passion and creativity we bring to every digital endeavor. 
-            From sleek web designs to dynamic branding solutions, our portfolio highlights the diversity of our work.
+            Jedes Projekt in unserer Sammlung spiegelt die Leidenschaft und Kreativität wider, 
+            die wir in jedes Transportunternehmen einbringen. Von sicheren Möbeltransporten bis 
+            hin zu professionellen Umzugslösungen.
           </p>
+        </div>
+
+        {/* Video Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-white mb-4">Transport in Aktion</h3>
+            <p className="text-xl text-gray-300">Sehen Sie unsere professionellen Transporte live</p>
+          </div>
+          <div className="relative max-w-4xl mx-auto">
+            <video 
+              className="w-full rounded-2xl shadow-2xl"
+              controls
+              poster="/images/gallery/gallery-1.jpg"
+            >
+              <source src="/images/gallery/transport-video.mp4" type="video/mp4" />
+              Ihr Browser unterstützt keine Video-Wiedergabe.
+            </video>
+          </div>
         </div>
 
         {/* Portfolio Gallery */}
@@ -109,7 +128,7 @@ const PortfolioGallery: React.FC = () => {
                 <div className="content">
                   <h3>{item.title}</h3>
                   <a href={item.link} className="btn">
-                    Read More
+                    Mehr erfahren
                   </a>
                 </div>
               </div>
@@ -120,7 +139,7 @@ const PortfolioGallery: React.FC = () => {
         {/* CTA Section */}
         <div className="text-center mt-16">
           <button className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-700 hover:to-blue-900 transition-all duration-300 shadow-lg transform hover:scale-105">
-            Work with us
+            Mit uns arbeiten
           </button>
         </div>
       </div>
