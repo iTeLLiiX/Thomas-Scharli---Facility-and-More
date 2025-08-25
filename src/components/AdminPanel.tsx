@@ -284,8 +284,3 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
 };
 
 export default AdminPanel;
-
-<<<<<<< HEAD
-
-=======
->>>>>>> e5299f6b66d7c20a71a7838b373248c537535e11
