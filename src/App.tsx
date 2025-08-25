@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -9,13 +10,37 @@ import OfficeDay from './components/OfficeDay';
 import Webinars from './components/Webinars';
 import WorkWithUs from './components/WorkWithUs';
 import Services from './components/Services';
+=======
+import React, { useEffect, useState } from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import WorkSection from './components/WorkSection';
+import AboutUs from './components/AboutUs';
+import Services from './components/Services';
+import Testimonials from './components/Testimonials';
+import Contact from './components/Contact';
+import CTASection from './components/CTASection';
+>>>>>>> e5299f6b66d7c20a71a7838b373248c537535e11
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
 import CookieConsent from './components/CookieConsent';
 import AdminPanel from './components/AdminPanel';
 
 function App() {
-  const [isAdminPanelOpen, setIsAdminPanelOpen] = useState(false);
+  const [showAdminPanel, setShowAdminPanel] = useState(false);
+
+  useEffect(() => {
+    // GSAP Animationen
+    const { gsap } = window;
+    if (gsap) {
+      gsap.from('.hero-content', {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        ease: 'power3.out'
+      });
+    }
+  }, []);
 
   // Initialize GSAP and ScrollTrigger when component mounts
   useEffect(() => {
@@ -134,6 +159,7 @@ function App() {
     <div className="min-h-screen bg-white">
       <Header />
       <Hero />
+<<<<<<< HEAD
       <TeamSection />
       <WhoWeAre />
       <OurWork />
@@ -142,27 +168,29 @@ function App() {
       <Webinars />
       <WorkWithUs />
       <Services />
+=======
+      <WorkSection />
+      <AboutUs />
+      <Services />
+      <Contact />
+>>>>>>> e5299f6b66d7c20a71a7838b373248c537535e11
       <Footer />
       <ChatWidget />
       <CookieConsent />
       
-      {/* Admin Panel Toggle Button */}
+      {/* Admin Button - Versteckt */}
       <button
-        onClick={() => setIsAdminPanelOpen(true)}
-        className="fixed top-4 right-4 z-40 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
-        title="Admin Panel öffnen"
+        onClick={() => setShowAdminPanel(true)}
+        className="fixed bottom-4 right-4 z-50 bg-red-600 text-white p-2 rounded-full shadow-lg hover:bg-red-700 transition-colors text-xs font-bold opacity-20 hover:opacity-100"
+        title="Admin Panel"
       >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
+        A
       </button>
 
       {/* Admin Panel */}
-      <AdminPanel 
-        isOpen={isAdminPanelOpen} 
-        onClose={() => setIsAdminPanelOpen(false)} 
-      />
+      {showAdminPanel && (
+        <AdminPanel isOpen={showAdminPanel} onClose={() => setShowAdminPanel(false)} />
+      )}
     </div>
   );
 }
