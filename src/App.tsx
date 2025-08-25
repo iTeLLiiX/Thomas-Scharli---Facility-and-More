@@ -5,6 +5,7 @@ import Services from './components/Services';
 import AboutSection from './components/AboutSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import PortfolioGallery from './components/PortfolioGallery';
+import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
 import CookieConsent from './components/CookieConsent';
@@ -165,6 +166,7 @@ function App() {
       <AboutSection />
       <TestimonialsSection />
       <PortfolioGallery />
+      <ContactSection />
       <Footer />
       <ChatWidget />
       <CookieConsent />

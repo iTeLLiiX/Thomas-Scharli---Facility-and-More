@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { X, Settings, BarChart3, Users, Image, FileText, Shield, LogOut } from 'lucide-react';
-import ImageManager from './ImageManager';
 
 interface AdminPanelProps {
   isOpen: boolean;
@@ -241,7 +240,9 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose }) => {
                         Verwalten Sie alle Bilder der Website. Laden Sie neue Bilder hoch, bearbeiten Sie bestehende und organisieren Sie sie in Kategorien.
                       </p>
                     </div>
-                    <ImageManager />
+                    <div className="bg-white border border-gray-200 rounded-xl p-6">
+                      <p className="text-gray-600">Bildverwaltung wird bald verfügbar sein...</p>
+                    </div>
                   </div>
                 )}
 
