@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import AboutSection from './components/AboutSection';
+import TestimonialsSection from './components/TestimonialsSection';
 import PortfolioGallery from './components/PortfolioGallery';
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
@@ -160,6 +162,8 @@ function App() {
       <Header onAdminLogin={() => setIsAdminPanelOpen(true)} />
       <Hero />
       <Services />
+      <AboutSection />
+      <TestimonialsSection />
       <PortfolioGallery />
       <Footer />
       <ChatWidget />
